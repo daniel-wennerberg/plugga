@@ -433,7 +433,7 @@ def bygg_sida(ut):
         shutil.rmtree(ut)
     (ut / "data" / "amne").mkdir(parents=True)
     (ut / "data" / "fragor").mkdir()
-    for f in ("app.css", "common.js"):
+    for f in ("app.css", "common.js", "tidslinje.html"):
         shutil.copy(WEB / f, ut / f)
     if (WEB / "img").exists():
         shutil.copytree(WEB / "img", ut / "img")

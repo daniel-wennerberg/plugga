@@ -159,6 +159,7 @@ section.view{padding-top:26px}
       <a href="#kort">Flashcards</a>
       <a href="#forhor">Förhör</a>
       <a href="#laroplan">Läroplanen</a>
+      <a href="tidslinje.html">Tidslinje</a>
       <a href="#dela">Dela</a>
       <a href="/admin" id="admin-link" hidden>Admin</a>
     </nav>
@@ -328,7 +329,7 @@ function renderStart() {
     if (utan.length) groups.push({ id: 'ingen', namn: 'Övrigt', fs: utan });
     return `<div class="subj-block">
       <div class="subj-head${BILD[a.kod] ? ' bild' : ''}"${bildAttr(a.kod)}><div><p class="eyebrow">${a.antal} frågor · ${lvCounts(fragor)}</p><h2 style="margin-top:4px">${esc(amne.namn)}</h2>${about}
-        <div class="links"><button type="button" class="btn sm primary" data-go="${a.kod}|alla">Flashcards</button><button type="button" class="btn sm" data-quiz="${a.kod}">Förhör</button></div></div>
+        <div class="links"><button type="button" class="btn sm primary" data-go="${a.kod}|alla">Flashcards</button><button type="button" class="btn sm" data-quiz="${a.kod}">Förhör</button>${a.kod === 'GRGRHIS01' ? '<a class="btn sm" href="tidslinje.html">Tidslinje</a>' : ''}</div></div>
         <div class="meter"><span>${r.green} av ${r.n} gröna${r.ignored ? ` · ${r.ignored} ignoreras` : ''}</span>${stackBar(r)}${S.best[a.kod] ? `<span>Bästa förhör ${esc(S.best[a.kod])}</span>` : ''}${wqBtns(r, a.kod + '|')}</div></div>
       <div class="goals">${groups.map(g => { const x = tallyOf(g.fs); return `<div class="goal"><div style="min-width:0"><p><b>${esc(g.namn)}</b></p>
           <div class="links"><span class="lvs">${lvCounts(g.fs)}</span>${g.id !== 'ingen' ? `<button type="button" class="chiplink" data-go="${a.kod}|${g.id}">Flashcards</button>` : ''}</div></div>

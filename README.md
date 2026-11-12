@@ -28,6 +28,7 @@ Markeringar (röd/gul/grön), ignorerade kort och bästa förhör sparas i webbl
 - **Start** – sammanställning per ämne och tema med staplar, provområdets beskrivning, förhör på röda/gula kort per tema, ämne eller allt.
 - **Flashcards** – filter på nivå, samling, tema och färg; pluppar under kortet (en per kort, klicka för att hoppa); ignorera kort; inställningar (visa ignorerade, blanda, rensa färger, ta tillbaka ignorerade). Tangenter: mellanslag, ← →, 1 2 3, 0, I.
 - **Förhör** – välj ämne, teman, nivå och vilka kort; visa svaret och bedöm dig själv, bedömningen blir kortets färg.
+- **Tidslinje** (`tidslinje.html`, länk i menyn och under Historia) – revolutionernas tidslinje med fri panorering och zoom: fyra fält (upplysningen & idéer, amerikanska, franska, industriella), pratbubblor (stora = viktiga händelser, små = mindre), personer med porträtt, perioder som staplar och viktiga årtal markerade. Händelserna ligger i `ITEMS` i filen. Bilderna kommer från Wikimedia Commons (`web/img/tl/`, källor och licenser i `credits.json`, visas under *Bildkällor*).
 - **Dela** – resultatlänk (visar färger, röda/gula frågor och bläddringsbara kort för mottagaren) och flyttlänk med QR-kod för att fortsätta på en annan enhet (ersätt eller slå ihop).
   Länken kodar färgerna per ämne utifrån frågornas id i databasen. Bygg om och pusha sidan när frågor lagts till, annars känner den publicerade sidan inte igen dem.
 

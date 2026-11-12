@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revolutionernas tidslinje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%222%22 y=%228%22 width=%2218%22 height=%2218%22 rx=%225%22 fill=%22%232350c8%22/%3E%3Ccircle cx=%2224%22 cy=%2217%22 r=%225%22 fill=%22%23e8930c%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+<style>
+:root{--c-ide:#8a3fb8;--c-am:#2350c8;--c-fr:#c03526;--c-ind:#b06200}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--c-ide:#d29bf5;--c-am:#7d9cff;--c-fr:#ff7a6a;--c-ind:#f3a93a}}
+:root[data-theme="dark"]{--c-ide:#d29bf5;--c-am:#7d9cff;--c-fr:#ff7a6a;--c-ind:#f3a93a}
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column;overscroll-behavior:none}
+.tl-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--paper);z-index:10}
+.tl-head .back{font-weight:700;text-decoration:none;white-space:nowrap}
+.tl-head h1{font-size:1.25rem;letter-spacing:-.01em;margin-right:auto}
+.jump{display:flex;gap:6px;flex-wrap:wrap}
+.jump button{font:inherit;font-size:.85rem;font-weight:700;border:1.5px solid var(--lc,var(--line));color:var(--lc,var(--ink));background:var(--card);border-radius:999px;padding:3px 11px;cursor:pointer}
+.jump button:hover{background:var(--hover)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);width:100%}
+.legend i{display:inline-block;border:2px solid var(--muted);border-radius:6px;vertical-align:-2px;margin-right:5px}
+#vp{position:relative;flex:1;overflow:hidden;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;background:var(--paper)}
+#vp.drag{cursor:grabbing}
+#world{position:absolute;left:0;top:0;transform-origin:0 0}
+/* tidsaxel och fält */
+.stripe{position:absolute;left:0;background:color-mix(in srgb,var(--lc) 6%,transparent);border-top:1px solid color-mix(in srgb,var(--lc) 25%,transparent)}
+.ax{position:absolute;left:0;height:4px;margin-top:-2px;background:var(--lc);border-radius:2px;opacity:.8}
+.grid{position:absolute;top:0;width:1px;background:var(--line);opacity:.7}
+.grid.key{width:2px;background:var(--flame);opacity:.35}
+.bigyr{position:absolute;top:30px;transform:translateX(-50%);font:800 120px/1 var(--display);color:var(--flame);opacity:.13;letter-spacing:-.04em;pointer-events:none}
+.band{position:absolute;height:18px;margin-top:-9px;border-radius:9px;background:var(--lc);color:var(--paper);font:700 11px/18px var(--mono);padding:0 9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2;letter-spacing:.03em}
+.band.l1{opacity:.62}
+.con{position:absolute;width:2px;margin-left:-1px;background:var(--lc);opacity:.5;z-index:1}
+.dot{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--lc);border:3px solid var(--paper);z-index:3}
+.dot.big{width:22px;height:22px;margin:-11px 0 0 -11px}
+.dot.p{background:var(--paper);border:4px solid var(--lc)}
+/* pratbubblor */
+.bub{position:absolute;background:var(--card);border:2px solid var(--lc);border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.12);z-index:2}
+.bub::after{content:"";position:absolute;left:18px;width:14px;height:14px;background:var(--card);border:2px solid var(--lc);transform:rotate(45deg)}
+.bub.up::after{bottom:-9px;border-top:0;border-left:0}
+.bub.down::after{top:-9px;border-bottom:0;border-right:0}
+.bub.big{width:310px}
+.bub.small{width:215px}
+.pic{display:block;width:100%;height:170px;object-fit:cover;border-radius:14px 14px 0 0;cursor:zoom-in;background:var(--hover)}
+.small .pic{height:105px}
+.bt{padding:10px 14px 12px}
+.yr{display:block;font-family:var(--mono);font-weight:700;color:var(--lc);font-size:.75rem;letter-spacing:.03em}
+.big .yr{font-size:1rem}
+.bub h3{margin:2px 0 4px}
+.big h3{font-size:1.45rem}
+.small h3{font-size:1rem}
+.big p{font-size:.98rem;line-height:1.45}
+.small p{font-size:.82rem;line-height:1.4;color:var(--muted)}
+.bub.person{display:flex;gap:12px;align-items:center;padding:10px 14px 10px 10px;border-radius:60px 18px 18px 60px;border-style:solid;border-width:2px 2px 2px 5px}
+.bub.person .bt{padding:0}
+.portrait{flex:none;width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--lc);cursor:zoom-in;background:var(--hover);display:grid;place-items:center;font:800 1.5rem var(--display);color:var(--lc)}
+.small .portrait{width:60px;height:60px;font-size:1.1rem}
+.bub.person.big{width:330px}
+.bub.person.small{width:250px}
+.tag{display:inline-block;font:700 .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--lc);border:1px solid var(--lc);border-radius:4px;padding:0 4px;margin-left:6px;vertical-align:1px}
+/* fast överlägg */
+#axis{position:absolute;left:0;right:0;top:0;height:40px;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:6;pointer-events:none;overflow:hidden}
+.tk{position:absolute;bottom:0;transform:translateX(-50%);font:600 12px/1 var(--mono);color:var(--muted);padding-bottom:9px;white-space:nowrap}
+.tk::after{content:"";position:absolute;left:50%;bottom:0;width:1px;height:6px;background:var(--muted)}
+.tk.key{font-size:17px;font-weight:700;color:var(--flame);padding-bottom:8px}
+.tk.key::after{height:8px;width:2px;background:var(--flame)}
+#lanes{position:absolute;inset:40px 0 0 0;z-index:5;pointer-events:none;overflow:hidden}
+.ll{position:absolute;left:10px;transform:translateY(-50%);padding:4px 12px;border-radius:999px;background:var(--lc);color:var(--paper);font:700 .85rem var(--display);white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.zoom{position:absolute;right:16px;bottom:16px;display:grid;gap:6px;z-index:7}
+.zoom button,.credits-btn{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:700 1.3rem/1 var(--body);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.zoom button:hover{background:var(--hover)}
+.hint{position:absolute;left:16px;bottom:16px;z-index:7;font-size:.82rem;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 10px;max-width:calc(100% - 110px);transition:opacity .6s}
+.hint button{font:inherit;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+/* bildvisning */
+.lb{position:fixed;inset:0;z-index:20;background:rgba(5,8,12,.85);display:grid;place-items:center;padding:16px;cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(900px,100%);display:grid;gap:10px}
+.lb img{max-width:100%;max-height:72vh;border-radius:10px;justify-self:center;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.lb figcaption{color:#e5ecf2;font-size:.95rem;line-height:1.45}
+.lb figcaption b{font-family:var(--display);font-size:1.15rem}
+.lb small{display:block;color:#94a4b3;margin-top:4px}
+.lb a{color:#9bb4ff}
+.lb .list{background:var(--card);color:var(--ink);border-radius:14px;padding:18px 20px;max-width:640px;max-height:80vh;overflow:auto;cursor:auto}
+.lb .list li{font-size:.85rem;margin:4px 0}
+@media (max-width:640px){.tl-head h1{font-size:1.05rem}.legend{display:none}.bigyr{font-size:90px}}
+</style>
+</head>
+<body>
+<header class="tl-head">
+  <a class="back" href="index.html#start">← Plugga</a>
+  <h1>Revolutionernas tidslinje</h1>
+  <div class="jump" id="jump"></div>
+  <div class="legend"><span><i style="width:22px;height:14px"></i>Stor bubbla = viktig händelse</span><span><i style="width:14px;height:10px"></i>Liten bubbla = mindre händelse</span><span><i style="width:14px;height:14px;border-radius:50%"></i>Rund bild = person</span><span>Färgad stapel = period</span></div>
+</header>
+<div id="vp" tabindex="0" aria-label="Tidslinje. Dra för att panorera, scrolla eller nyp för att zooma.">
+  <div id="world"></div>
+  <div id="axis"></div>
+  <div id="lanes"></div>
+  <div class="zoom"><button type="button" id="zin" aria-label="Zooma in">+</button><button type="button" id="zout" aria-label="Zooma ut">−</button><button type="button" id="zfit" aria-label="Visa allt" style="font-size:1rem">⤢</button></div>
+  <div class="hint" id="hint">Dra för att flytta · scrolla, nyp eller +/− för att zooma · klicka på en bild för att förstora · <button type="button" id="cred">Bildkällor</button></div>
+</div>
+<div class="lb" id="lb" hidden></div>
+<script src="common.js"></script>
+<script>
+/* ---------- skala: år -> x. Tätare skala där mycket händer. */
+const SEG = [[1680, 1760, 6], [1760, 1772, 40], [1772, 1785, 95], [1785, 1789, 150], [1789, 1790, 700], [1790, 1795, 170], [1795, 1820, 60], [1820, 1900, 16]];
+const X0 = 120;
+const X = y => { let x = X0; for (const [a, b, k] of SEG) { if (y <= a) break; x += (Math.min(y, b) - a) * k; } return x; };
+const W = X(1900) + 160;
+const KEY = [1776, 1789, 1793, 1799, 1815, 1783, 1848];
+
+const LANES = [
+  { id: 'ide', namn: 'Upplysningen & idéer', c: '--c-ide' },
+  { id: 'am', namn: 'Amerikanska revolutionen', c: '--c-am' },
+  { id: 'fr', namn: 'Franska revolutionen', c: '--c-fr' },
+  { id: 'ind', namn: 'Industriella revolutionen', c: '--c-ind' },
+];
+const BANDS = [
+  ['ide', 1685, 1800, 'Upplysningen', 0],
+  ['am', 1756, 1763, 'Sjuårskriget', 0], ['am', 1775.3, 1783.7, 'Frihetskriget 1775–1783', 0],
+  ['fr', 1789.35, 1799.86, 'Franska revolutionen 1789–1799', 0], ['fr', 1793.7, 1794.56, 'Skräckväldet', 1],
+  ['fr', 1799.86, 1815.5, 'Napoleontiden 1799–1815', 0], ['fr', 1792.3, 1815.5, 'Revolutions- och Napoleonkrigen', 2],
+  ['ind', 1700, 1850, 'Jordbruksrevolutionen', 1], ['ind', 1760, 1850, 'Industriella revolutionen i Storbritannien', 0],
+  ['ind', 1850, 1900, 'Industrialiseringen i Sverige', 0],
+];
+/* l = fält, y = år (decimal), d = datumtext, t = rubrik, x = text, img = bild, big = viktig, p = person (liv) */
+const ITEMS = [
+  // idéer
+  { l: 'ide', y: 1690, p: '1632–1704', t: 'John Locke', x: 'Samhällskontraktet: härskaren ska skydda folkets naturliga rättigheter – liv, frihet och egendom. Gör han inte det får folket avsätta honom.', img: 'p_locke', big: 1 },
+  { l: 'ide', y: 1748, p: '1689–1755', t: 'Montesquieu', x: 'Om lagarnas anda (1748): maktdelning mellan lagstiftande, verkställande och dömande makt.', img: 'p_montesquieu', big: 1 },
+  { l: 'ide', y: 1755, p: '1694–1778', t: 'Voltaire', x: 'Yttrandefrihet och tolerans. Kritiserade kyrkans makt.', img: 'p_voltaire' },
+  { l: 'ide', y: 1762, p: '1712–1778', t: 'Jean-Jacques Rousseau', x: 'Samhällsfördraget (1762): makten ska utgå från folket. Alla människor är lika mycket värda.', img: 'p_rousseau', big: 1 },
+  { l: 'ide', y: 1776.2, p: '1723–1790', t: 'Adam Smith', x: 'Nationernas välstånd (1776): fri marknad och fri handel.', img: 'p_smith' },
+  { l: 'ide', y: 1790.9, p: '1729–1797', t: 'Edmund Burke', x: 'Kritiserade revolutionen 1790. Konservatismen: förändra långsamt.', img: 'p_burke' },
+  { l: 'ide', y: 1791.7, p: '1748–1793', t: 'Olympe de Gouges', x: 'Deklarationen om kvinnans och medborgarinnans rättigheter (1791). Avrättades under skräckväldet.', img: 'p_gouges', big: 1 },
+  { l: 'ide', y: 1820, d: '1800-talet', t: 'Ideologierna föds', x: 'Liberalism, konservatism och socialism växer fram. ”Höger” och ”vänster” kommer från platserna i nationalförsamlingen.' },
+  { l: 'ide', y: 1830.6, d: '1830', t: 'Julirevolutionen', x: 'Ny revolution i Frankrike. Delacroix målar Friheten leder folket.', img: 'liberty' },
+  { l: 'ide', y: 1848, d: '1848', t: 'Revolutionsåret', x: 'Revolutioner i stora delar av Europa – krav på demokrati och rättigheter.', big: 1 },
+  { l: 'ide', y: 1848.3, p: '1818–1883', t: 'Karl Marx', x: 'Kommunistiska manifestet (1848, med Engels): klasslöst samhälle – socialismen.', img: 'p_marx' },
+  // amerikanska
+  { l: 'am', y: 1763, d: '1763', t: 'Sjuårskriget slutar', x: 'Storbritannien vinner men har stora skulder – och höjer skatterna i kolonierna.' },
+  { l: 'am', y: 1765.2, d: '1765', t: 'Stämpelskatten', x: 'Skatt på tidningar och dokument. ”Ingen beskattning utan representation!”' },
+  { l: 'am', y: 1770.2, d: '1770', t: 'Bostonmassakern', x: 'Brittiska soldater skjuter ihjäl fem kolonister i Boston.' },
+  { l: 'am', y: 1773.96, d: '16 dec 1773', t: 'Boston Tea Party', x: 'Kolonister utklädda till ursprungsbefolkning kastar te i hamnen – protest mot teskatten.', img: 'teaparty', big: 1 },
+  { l: 'am', y: 1775.3, d: '19 april 1775', t: 'Lexington och Concord', x: 'De första skotten – frihetskriget börjar.', img: 'lexington', big: 1 },
+  { l: 'am', y: 1775.5, p: '1732–1799', t: 'George Washington', x: 'Överbefälhavare i frihetskriget. USA:s förste president 1789–1797.', img: 'p_washington', big: 1 },
+  { l: 'am', y: 1776.4, p: '1743–1826', t: 'Thomas Jefferson', x: 'Skrev självständighetsförklaringen. President 1801–1809 – men ägde själv slavar.', img: 'p_jefferson', big: 1 },
+  { l: 'am', y: 1776.51, d: '4 juli 1776', t: 'Självständighetsförklaringen', x: '”Alla människor är skapade lika” och har rätt till liv, frihet och strävan efter lycka.', img: 'declaration', big: 1 },
+  { l: 'am', y: 1776.98, d: 'dec 1776', t: 'Över Delaware', x: 'Washington korsar floden på juldagsnatten och anfaller överraskande.', img: 'delaware' },
+  { l: 'am', y: 1777.8, d: 'okt 1777', t: 'Saratoga', x: 'Vändpunkten. Segern får Frankrike att gå med i kriget 1778.', img: 'saratoga' },
+  { l: 'am', y: 1778.1, p: '1706–1790', t: 'Benjamin Franklin', x: 'Uppfinnare och diplomat. Fick Frankrike att stödja kolonierna.', img: 'p_franklin' },
+  { l: 'am', y: 1781.8, d: 'okt 1781', t: 'Yorktown', x: 'Britterna kapitulerar – striderna är över.', img: 'yorktown' },
+  { l: 'am', y: 1783.7, d: '1783', t: 'Parisfreden', x: 'Storbritannien erkänner USA:s självständighet.', big: 1 },
+  { l: 'am', y: 1787.7, d: '1787–1789', t: 'Författningen', x: 'Maktdelning mellan president, kongress och högsta domstol. Gäller än i dag.', img: 'constitution', big: 1 },
+  { l: 'am', y: 1789.3, d: '1789', t: 'Förste presidenten', x: 'George Washington väljs. USA blir en republik utan kung.' },
+  { l: 'am', y: 1791.9, d: '1791', t: 'Bill of Rights', x: 'Tillägg till författningen: yttrande-, religions- och pressfrihet.' },
+  { l: 'am', y: 1865, d: '1865', t: 'Slaveriet avskaffas', x: 'Friheten gällde inte alla: slaveriet fanns kvar till 1865, kvinnor fick rösta först 1920.', big: 1 },
+  // franska
+  { l: 'fr', y: 1774.4, p: '1754–1793', t: 'Ludvig XVI', x: 'Enväldig kung från 1774. Avsattes 1792 och avrättades 1793.', img: 'p_louis', big: 1 },
+  { l: 'fr', y: 1785, p: '1755–1793', t: 'Marie Antoinette', x: 'Drottning, symbol för hovets slöseri. Avrättad oktober 1793.', img: 'p_marie' },
+  { l: 'fr', y: 1788.4, d: '1788', t: 'Kris', x: 'Staten nästan bankrutt efter krig – bl.a. stödet till USA. Missväxt och dyrt bröd.' },
+  { l: 'fr', y: 1789.35, d: 'maj 1789', t: 'Generalständerna', x: 'Kungen kallar in de tre stånden för att få nya skatter. Tredje ståndet kräver en röst per ledamot.', img: 'estates', big: 1 },
+  { l: 'fr', y: 1789.47, d: '20 juni 1789', t: 'Bollhuseden', x: 'Tredje ståndet bildar nationalförsamlingen och svär att få en författning.', img: 'tennis' },
+  { l: 'fr', y: 1789.53, d: '14 juli 1789', t: 'Bastiljen stormas', x: 'Revolutionens startskott. Frankrikes nationaldag.', img: 'bastille', big: 1 },
+  { l: 'fr', y: 1789.59, d: '4 aug 1789', t: 'Privilegierna avskaffas', x: 'Adel och präster förlorar sina privilegier – alla ska betala skatt.' },
+  { l: 'fr', y: 1789.65, d: '26 aug 1789', t: 'Mänskliga rättigheter', x: 'Deklarationen: alla föds fria och lika i rättigheter. Frihet, jämlikhet, broderskap.', img: 'rights', big: 1 },
+  { l: 'fr', y: 1789.76, d: '5 okt 1789', t: 'Kvinnotåget till Versailles', x: 'Tusentals kvinnor kräver bröd. Kungafamiljen tvingas flytta till Paris.', img: 'versailles' },
+  { l: 'fr', y: 1791.47, d: 'juni 1791', t: 'Flykten till Varennes', x: 'Kungafamiljen försöker fly men grips.' },
+  { l: 'fr', y: 1792.3, d: 'april 1792', t: 'Krig mot Österrike', x: 'Revolutionskrigen börjar.' },
+  { l: 'fr', y: 1792.72, d: 'sept 1792', t: 'Republik', x: 'Kungen avsätts. Frankrike blir republik.', big: 1 },
+  { l: 'fr', y: 1793.06, d: '21 jan 1793', t: 'Kungen avrättas', x: 'Ludvig XVI halshuggs med giljotinen.', img: 'execution', big: 1 },
+  { l: 'fr', y: 1793.53, d: 'juli 1793', t: 'Marat mördas', x: 'Charlotte Corday dödar den radikale ledaren Marat – han blir martyr.', img: 'marat' },
+  { l: 'fr', y: 1793.9, p: '1758–1794', t: 'Robespierre', x: 'Jakobinernas ledare under skräckväldet. Avrättades själv 1794.', img: 'p_robespierre', big: 1 },
+  { l: 'fr', y: 1794.0, d: '1793–1794', t: 'Skräckväldet', x: 'Alla som misstänks vara revolutionens fiender kan avrättas – ca 40 000 döda.', big: 1 },
+  { l: 'fr', y: 1794.57, d: 'juli 1794', t: 'Robespierre avrättas', x: 'Skräckväldet tar slut.' },
+  { l: 'fr', y: 1799.86, d: '9–10 nov 1799', t: 'Brumairekuppen', x: 'Napoleon tar makten – revolutionen är slut.', big: 1 },
+  { l: 'fr', y: 1800.6, p: '1769–1821', t: 'Napoleon Bonaparte', x: 'General, förste konsul 1799, kejsare 1804. Spred revolutionens lagar – men styrde som diktator.', img: 'p_napoleon', big: 1 },
+  { l: 'fr', y: 1804.2, d: '1804', t: 'Code Napoléon', x: 'Ny lagbok: samma lagar för alla män. Sprids över Europa.' },
+  { l: 'fr', y: 1804.92, d: '2 dec 1804', t: 'Napoleon kejsare', x: 'Kröns i Notre-Dame – sätter själv kronan på huvudet.', img: 'coronation', big: 1 },
+  { l: 'fr', y: 1812.5, d: '1812', t: 'Fälttåget mot Ryssland', x: 'Den stora armén går under i den ryska vintern.' },
+  { l: 'fr', y: 1814.9, d: '1814–1815', t: 'Wienkongressen', x: 'Segrarna ritar om Europas karta och återinsätter kungar. Maktbalans mellan stormakterna.', img: 'vienna', big: 1 },
+  { l: 'fr', y: 1815.46, d: 'juni 1815', t: 'Waterloo', x: 'Napoleons slutliga nederlag. Förvisas till Sankt Helena.', img: 'waterloo' },
+  // industriella
+  { l: 'ind', y: 1712, d: '1712', t: 'Newcomens ångmaskin', x: 'Första användbara ångmaskinen – pumpar vatten ur gruvor.' },
+  { l: 'ind', y: 1764, d: '1764', t: 'Spinning Jenny', x: 'Spinnmaskin – textilindustrin blir först med maskiner.', img: 'jenny' },
+  { l: 'ind', y: 1769, d: '1769–1776', t: 'Watts ångmaskin', x: 'Effektiv ångmaskin som kan driva fabriker, tåg och fartyg. Industrialiseringens viktigaste uppfinning.', img: 'watt', big: 1 },
+  { l: 'ind', y: 1772, p: '1736–1819', t: 'James Watt', x: 'Skotsk uppfinnare som förbättrade ångmaskinen.', img: 'p_watt' },
+  { l: 'ind', y: 1785, d: '1785', t: 'Mekaniska vävstolen', x: 'Vävning med maskinkraft – tyg blir billigt.', img: 'loom' },
+  { l: 'ind', y: 1800, d: '1800-talet', t: 'Urbanisering', x: 'Folk flyttar till fabriksstäderna: slum, barnarbete och 12–16 timmars arbetsdagar.', big: 1 },
+  { l: 'ind', y: 1825.75, d: '1825 / 1830', t: 'Järnvägen', x: 'Stockton–Darlington 1825, Liverpool–Manchester 1830 med loket Rocket. Snabba och billiga transporter.', img: 'rocket', big: 1 },
+  { l: 'ind', y: 1829, p: '1781–1848', t: 'George Stephenson', x: '”Järnvägens fader”, byggde loket Rocket.', img: 'p_stephenson' },
+  { l: 'ind', y: 1833, d: '1833', t: 'Fabrikslagen', x: 'Storbritannien förbjuder fabriksarbete för barn under 9 år.' },
+  { l: 'ind', y: 1856, d: '1856', t: 'Järnväg i Sverige', x: 'De första stambanorna – industrialiseringen tar fart.' },
+  { l: 'ind', y: 1867.5, d: '1867–1869', t: 'Nödåren och emigrationen', x: 'Missväxt och svält. Ca 1,3 miljoner svenskar utvandrar till USA.', img: 'emigration', big: 1 },
+  { l: 'ind', y: 1872, d: '1870-talet', t: 'Sverige industrialiseras', x: 'Sågverk, järnbruk och verkstäder. Arbetarklassen växer – fackföreningar och arbetarrörelse.' },
+];
+
+const vp = $('#vp'), world = $('#world'), axis = $('#axis'), lanesEl = $('#lanes'), lb = $('#lb');
+let CR = {}, LAY = [], H = 0;
+const T = { x: 0, y: 0, s: .4 };
+
+function initials(n) { return n.split(' ').map(w => w[0]).join('').slice(0, 2); }
+function bubble(it, lane) {
+  const el = document.createElement('div'), img = CR[it.img] ? `img/tl/${it.img}.jpg` : null;
+  el.className = `bub ${it.big ? 'big' : 'small'}${it.p ? ' person' : ''}`;
+  el.style.setProperty('--lc', `var(${lane.c})`);
+  el.dataset.i = ITEMS.indexOf(it);
+  el.innerHTML = it.p
+    ? `${img ? `<img class="portrait" src="${img}" alt="${esc(it.t)}" draggable="false">` : `<span class="portrait">${initials(it.t)}</span>`}
+       <div class="bt"><span class="yr">${it.p}<span class="tag">person</span></span><h3>${esc(it.t)}</h3><p>${esc(it.x)}</p></div>`
+    : `${img ? `<img class="pic" src="${img}" alt="${esc(it.t)}" draggable="false">` : ''}
+       <div class="bt"><span class="yr">${esc(it.d)}</span><h3>${esc(it.t)}</h3><p>${esc(it.x)}</p></div>`;
+  world.appendChild(el);
+  return el;
+}
+function put(cls, css, lane) {
+  const d = document.createElement('div'); d.className = cls; Object.assign(d.style, css);
+  if (lane) d.style.setProperty('--lc', `var(${lane.c})`);
+  world.appendChild(d); return d;
+}
+
+function layout() {
+  world.innerHTML = ''; LAY = [];
+  let top = 170;
+  const GAP = 18;
+  for (const lane of LANES) {
+    const its = ITEMS.filter(i => i.l === lane.id).sort((a, b) => a.y - b.y);
+    const bands = BANDS.filter(b => b[0] === lane.id);
+    const bandDepth = (Math.max(0, ...bands.map(b => b[4])) + 1) * 22;
+    const rows = [], above = [], below = [];
+    for (const it of its) {
+      it.el = bubble(it, lane);
+      it.w = it.el.offsetWidth; it.h = it.el.offsetHeight;
+      it.left = X(it.y) - 26;
+      let k = 0; while (rows[k] !== undefined && rows[k] + 16 > it.left) k++;
+      rows[k] = it.left + it.w; it.k = k;
+      const arr = k % 2 ? below : above, lv = k >> 1; arr[lv] = Math.max(arr[lv] || 0, it.h);
+    }
+    const sum = (arr, n) => arr.slice(0, n).reduce((s, h) => s + h + GAP, 0);
+    const gapA = 36, gapB = 34 + bandDepth;
+    const laneTop = top, laneY = top + sum(above, above.length) + gapA + 10;
+    for (const it of its) {
+      const lv = it.k >> 1, x = X(it.y);
+      let y0, y1;
+      if (it.k % 2 === 0) { const bottom = laneY - gapA - sum(above, lv); it.el.style.top = (bottom - it.h) + 'px'; it.el.classList.add('up'); y0 = bottom + 8; y1 = laneY; }
+      else { const t = laneY + gapB + sum(below, lv); it.el.style.top = t + 'px'; it.el.classList.add('down'); y0 = laneY; y1 = t - 8; }
+      it.el.style.left = it.left + 'px';
+      put('con', { left: x + 'px', top: y0 + 'px', height: (y1 - y0) + 'px' }, lane);
+      put('dot' + (it.big ? ' big' : '') + (it.p ? ' p' : ''), { left: x + 'px', top: laneY + 'px' }, lane);
+    }
+    const laneBottom = laneY + gapB + sum(below, below.length) + 30;
+    put('stripe', { top: laneTop + 'px', height: (laneBottom - laneTop) + 'px', width: W + 'px' }, lane).style.zIndex = 0;
+    put('ax', { top: laneY + 'px', width: W + 'px' }, lane);
+    for (const [, a, b, t, lv] of bands) {
+      const d = put('band' + (lv ? ' l1' : ''), { left: X(a) + 'px', width: (X(b) - X(a)) + 'px', top: (laneY + 20 + lv * 22) + 'px' }, lane);
+      d.textContent = t; d.title = t;
+    }
+    LAY.push({ lane, top: laneTop, y: laneY, bottom: laneBottom });
+    top = laneBottom + 40;
+  }
+  H = top + 40;
+  for (let yr = 1690; yr <= 1900; yr += 10) put('grid', { left: X(yr) + 'px', height: H + 'px' }).style.zIndex = 0;
+  for (const yr of KEY) {
+    put('grid key', { left: X(yr) + 'px', height: H + 'px' }).style.zIndex = 0;
+    if (yr !== 1793 && yr !== 1783) put('bigyr', { left: X(yr) + 'px' }).textContent = yr;
+  }
+  world.style.width = W + 'px'; world.style.height = H + 'px';
+}
+
+/* ---------- vy */
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+let raf = 0;
+function apply() {
+  world.style.transform = `translate(${T.x}px,${T.y}px) scale(${T.s})`;
+  if (!raf) raf = requestAnimationFrame(() => { raf = 0; drawAxis(); drawLanes(); });
+}
+const CAND = (() => {
+  const c = [...KEY]; const add = f => { for (let y = 1680; y <= 1900; y++) if (f(y) && !c.includes(y)) c.push(y); };
+  add(y => y % 50 === 0); add(y => y % 10 === 0); add(y => y % 5 === 0); add(() => true); return c;
+})();
+function drawAxis() {
+  const vw = vp.clientWidth, taken = [], out = [];
+  for (const yr of CAND) {
+    const sx = T.x + X(yr) * T.s; if (sx < -30 || sx > vw + 30) continue;
+    const key = KEY.includes(yr), room = key ? 64 : 50;
+    if (taken.some(p => Math.abs(p - sx) < room)) continue;
+    taken.push(sx); out.push(`<span class="tk${key ? ' key' : ''}" style="left:${sx.toFixed(1)}px">${yr}</span>`);
+  }
+  axis.innerHTML = out.join('');
+}
+function drawLanes() {
+  const vh = lanesEl.clientHeight, oy = 40;
+  lanesEl.innerHTML = LAY.map(L => {
+    const y = T.y + L.y * T.s - oy, t = T.y + L.top * T.s - oy + 16, b = T.y + L.bottom * T.s - oy - 16;
+    const lo = Math.max(t, 16), hi = Math.min(b, vh - 16); if (hi < lo) return '';
+    return `<span class="ll" style="--lc:var(${L.lane.c});top:${clamp(y, lo, hi)}px">${L.lane.namn}</span>`;
+  }).join('');
+}
+function zoomAt(px, py, f) {
+  const ns = clamp(T.s * f, .08, 2.6); f = ns / T.s;
+  T.x = px - (px - T.x) * f; T.y = py - (py - T.y) * f; T.s = ns; apply();
+}
+function animateTo(nx, ny, ns) {
+  const a = { ...T }, t0 = performance.now(), D = 450;
+  const step = now => {
+    const p = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - p, 3);
+    T.x = a.x + (nx - a.x) * e; T.y = a.y + (ny - a.y) * e; T.s = a.s + (ns - a.s) * e; apply();
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+function viewRange(y0, y1, laneId) {
+  const vw = vp.clientWidth, vh = vp.clientHeight;
+  const s = clamp((vw - 40) / (X(y1) - X(y0)), .08, 2.6);
+  const L = laneId && LAY.find(l => l.lane.id === laneId);
+  const ny = L ? 48 - L.top * s + Math.max(0, (vh - 48 - (L.bottom - L.top) * s) / 2) : 48 - 120 * s;
+  animateTo(20 - X(y0) * s, ny, s);
+}
+function fitAll() {
+  const vw = vp.clientWidth, vh = vp.clientHeight - 40, s = Math.min(vw / W, vh / H);
+  animateTo((vw - W * s) / 2, 40 + (vh - H * s) / 2, s);
+}
+
+/* ---------- panorera och zooma */
+const pts = new Map(); let moved = 0, pinch = null, lastTap = 0;
+const rel = e => { const r = vp.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+vp.addEventListener('pointerdown', e => {
+  if (e.target.closest('button,a')) return;
+  vp.setPointerCapture(e.pointerId); pts.set(e.pointerId, rel(e)); vp.classList.add('drag');
+  if (pts.size === 1) moved = 0;
+  if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), m: { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 } }; moved = 99; }
+});
+vp.addEventListener('pointermove', e => {
+  if (!pts.has(e.pointerId)) return;
+  const p = rel(e), q = pts.get(e.pointerId); pts.set(e.pointerId, p);
+  if (pts.size === 1) { T.x += p.x - q.x; T.y += p.y - q.y; moved += Math.abs(p.x - q.x) + Math.abs(p.y - q.y); apply(); }
+  else if (pinch && pts.size === 2) {
+    const [a, b] = [...pts.values()], d = Math.hypot(a.x - b.x, a.y - b.y), m = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    T.x += m.x - pinch.m.x; T.y += m.y - pinch.m.y; zoomAt(m.x, m.y, d / pinch.d); pinch = { d, m };
+  }
+});
+const up = e => {
+  if (!pts.has(e.pointerId)) return;
+  pts.delete(e.pointerId); if (pts.size < 2) pinch = null; if (!pts.size) vp.classList.remove('drag');
+  if (moved < 6 && !pts.size && e.type === 'pointerup') tap(e);
+};
+vp.addEventListener('pointerup', up); vp.addEventListener('pointercancel', up);
+function tap(e) {
+  const el = document.elementFromPoint(e.clientX, e.clientY), img = el && el.closest('.pic,.portrait');
+  if (img && img.tagName === 'IMG') { openImg(ITEMS[+img.closest('.bub').dataset.i]); return; }
+  const now = performance.now(), p = rel(e);
+  if (now - lastTap < 320) { zoomAt(p.x, p.y, 1.8); lastTap = 0; } else lastTap = now;
+}
+vp.addEventListener('wheel', e => {
+  e.preventDefault();
+  const p = rel(e), mouse = e.deltaMode === 1 || (e.deltaX === 0 && Math.abs(e.deltaY) >= 50 && Number.isInteger(e.deltaY));
+  if (e.ctrlKey || e.metaKey || mouse) zoomAt(p.x, p.y, Math.exp(-e.deltaY * (e.ctrlKey ? .012 : .0018)));
+  else { T.x -= e.deltaX; T.y -= e.deltaY; apply(); }
+}, { passive: false });
+const center = () => ({ x: vp.clientWidth / 2, y: vp.clientHeight / 2 });
+$('#zin').onclick = () => { const c = center(); zoomAt(c.x, c.y, 1.4); };
+$('#zout').onclick = () => { const c = center(); zoomAt(c.x, c.y, 1 / 1.4); };
+$('#zfit').onclick = fitAll;
+document.addEventListener('keydown', e => {
+  if (!lb.hidden) { if (e.key === 'Escape') lb.hidden = true; return; }
+  const c = center(), k = e.key;
+  if (k === '+' || k === '=') zoomAt(c.x, c.y, 1.3); else if (k === '-') zoomAt(c.x, c.y, 1 / 1.3); else if (k === '0') fitAll();
+  else if (k.startsWith('Arrow')) { const d = 120; T.x += k === 'ArrowLeft' ? d : k === 'ArrowRight' ? -d : 0; T.y += k === 'ArrowUp' ? d : k === 'ArrowDown' ? -d : 0; apply(); }
+  else return;
+  e.preventDefault();
+});
+window.addEventListener('resize', apply);
+
+/* ---------- bildvisning och bildkällor */
+const credit = key => { const c = CR[key]; return c ? `Bild: ${esc(c.upphov || 'okänd')} · ${esc(c.licens)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">Wikimedia Commons</a>` : ''; };
+function openImg(it) {
+  lb.innerHTML = `<figure><img src="img/tl/${it.img}.jpg" alt="${esc(it.t)}"><figcaption><b>${esc(it.t)}</b> · ${esc(it.d || it.p)}<br>${esc(it.x)}<small>${credit(it.img)}</small></figcaption></figure>`;
+  lb.hidden = false;
+}
+lb.addEventListener('click', e => { if (!e.target.closest('a,.list')) lb.hidden = true; });
+$('#cred').onclick = () => {
+  const used = ITEMS.filter(i => CR[i.img]);
+  lb.innerHTML = `<div class="list"><h3>Bildkällor</h3><p class="muted small">Alla bilder kommer från Wikimedia Commons.</p><ul>${used.map(i => `<li><b>${esc(i.t)}</b>: ${credit(i.img)}</li>`).join('')}</ul><button class="btn sm" type="button" onclick="lb.hidden=true">Stäng</button></div>`;
+  lb.hidden = false;
+};
+
+/* ---------- start */
+const JUMP = [['Allt', null], ['Upplysningen', [1680, 1800, 'ide'], '--c-ide'], ['Amerikanska', [1760, 1792, 'am'], '--c-am'], ['Franska', [1787, 1816, 'fr'], '--c-fr'], ['Industriella', [1700, 1900, 'ind'], '--c-ind']];
+$('#jump').innerHTML = JUMP.map(([n, , c], i) => `<button type="button" data-j="${i}"${c ? ` style="--lc:var(${c})"` : ''}>${n}</button>`).join('');
+$('#jump').onclick = e => { const b = e.target.closest('[data-j]'); if (!b) return; const r = JUMP[+b.dataset.j][1]; r ? viewRange(...r) : fitAll(); };
+
+(async () => {
+  try { const r = await fetch('img/tl/credits.json', { cache: 'no-cache' }); if (r.ok) CR = await r.json(); } catch (e) { }
+  if (document.fonts && document.fonts.ready) await document.fonts.ready;
+  layout();
+  const vw = vp.clientWidth, s = clamp((vw - 40) / (X(1800) - X(1760)), .12, 1);
+  T.s = s; T.x = 20 - X(1760) * s; T.y = 48 - 120 * s; apply();
+  setTimeout(() => $('#hint').style.opacity = .75, 6000);
+})();
+</script>
+</body>
+</html>
