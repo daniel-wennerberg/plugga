@@ -37,6 +37,7 @@ Markeringar (röd/gul/grön), ignorerade kort och bästa förhör sparas i webbl
 |---|---|---|
 | Kemi – Kolets kemi | `kemi-kolets-kemi.json` | 189 (80 instuderingsfrågor + 109 ur Stella KEMI 7–9 s. 100–141) |
 | Historia – Prov: Revolutioner förändrar världen | `historia-revolutioner.json` | 74 (amerikanska, franska och industriella revolutionen, analysmodell, KEPS, jämförelser) |
+| Historia – Historia - Revolution (Bok) | `historia-revolutioner-bok.json` | 49 (samma frågor som provområdet med svar ur läroboken SOL NOVA Historia s. 20–62; industriella revolutionen saknas i bokutdraget) |
 
 Läs in en fil: `python3 server.py --import seed/<fil>.json` (dubbletter hoppas över).
 
