@@ -21,7 +21,15 @@ git add -A && git commit -m "Nya frågor" && git push   # publicera
 
 Lokalt fungerar flashcards även från mobil/surfplatta på samma nätverk: `http://<datorns-ip>:8090/`. Ändringar (skapa, ändra, ta bort, importera) tillåts bara från datorn där servern körs.
 
-Markeringar (röd/gul/grön) sparas i webbläsarens localStorage, separat per webbläsare och adress.
+Markeringar (röd/gul/grön), ignorerade kort och bästa förhör sparas i webbläsarens localStorage, separat per webbläsare och adress.
+
+## Funktioner (samma som i Kolets kemi)
+
+- **Start** – sammanställning per ämne och tema med staplar, provområdets beskrivning, förhör på röda/gula kort per tema, ämne eller allt.
+- **Flashcards** – filter på nivå, samling, tema och färg; pluppar under kortet (en per kort, klicka för att hoppa); ignorera kort; inställningar (visa ignorerade, blanda, rensa färger, ta tillbaka ignorerade). Tangenter: mellanslag, ← →, 1 2 3, 0, I.
+- **Förhör** – välj ämne, teman, nivå och vilka kort; visa svaret och bedöm dig själv, bedömningen blir kortets färg.
+- **Dela** – resultatlänk (visar färger, röda/gula frågor och bläddringsbara kort för mottagaren) och flyttlänk med QR-kod för att fortsätta på en annan enhet (ersätt eller slå ihop).
+  Länken kodar färgerna per ämne utifrån frågornas id i databasen. Bygg om och pusha sidan när frågor lagts till, annars känner den publicerade sidan inte igen dem.
 
 ## Innehåll
 
