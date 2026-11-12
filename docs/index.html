@@ -27,6 +27,14 @@ section.view{padding-top:26px}
 .chiplink:hover{border-color:var(--accent);color:var(--accent)}
 .lvs{display:inline-flex;gap:6px;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
 @media (max-width:600px){.goal,.subj-head{grid-template-columns:1fr}}
+/* ämnesbild bakom rubriken */
+.bild{--sh:rgba(12,10,8,.9);background:linear-gradient(100deg,var(--sh) 0%,rgba(12,10,8,.72) 50%,rgba(12,10,8,.25) 100%),var(--bild) center 12%/cover;color:#fff;border-radius:16px;padding:22px 22px 18px;border-bottom:0!important;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.bild h2,.bild b{color:#fff}
+.bild .muted,.bild .eyebrow,.bild .meter{color:rgba(255,255,255,.82)}
+.bild .btn:not(.primary){border-color:rgba(255,255,255,.85);color:#fff}
+.bild .btn:not(.primary):hover{background:rgba(255,255,255,.14)}
+.sec-head.bild{padding:20px 20px 18px;align-items:center}
+@media (max-width:600px){.bild{background:linear-gradient(180deg,rgba(12,10,8,.55) 0%,var(--sh) 75%),var(--bild) center 12%/cover}}
 /* flashcards */
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
 .toolbar{display:grid;gap:10px;margin:12px 0 4px}
@@ -263,6 +271,9 @@ let AMNEN = [], DATA = {}, INFO = {}, SHARED = null, IMPORT = null, lpNiva = 'E'
 const D = () => DATA[S.amne];
 const F = () => D() ? D().fragor : [];
 const temaOf = f => { const a = DATA[f.amne_kod]; const t = a && a.amne.teman.find(t => t.id === f.tema_id); return t ? t.namn : ''; };
+/* bakgrundsbild per ämne (rubriken på start och flashcards) */
+const BILD = { GRGRHIS01: 'img/historia.jpg' };
+const bildAttr = kod => BILD[kod] ? ` style="--bild:url('${BILD[kod]}')"` : '';
 const amneNamn = kod => DATA[kod] ? DATA[kod].amne.namn : kod;
 
 /* ---------- data ---------- */
@@ -316,7 +327,7 @@ function renderStart() {
     const utan = fragor.filter(f => !f.tema_id);
     if (utan.length) groups.push({ id: 'ingen', namn: 'Övrigt', fs: utan });
     return `<div class="subj-block">
-      <div class="subj-head"><div><p class="eyebrow">${a.antal} frågor · ${lvCounts(fragor)}</p><h2 style="margin-top:4px">${esc(amne.namn)}</h2>${about}
+      <div class="subj-head${BILD[a.kod] ? ' bild' : ''}"${bildAttr(a.kod)}><div><p class="eyebrow">${a.antal} frågor · ${lvCounts(fragor)}</p><h2 style="margin-top:4px">${esc(amne.namn)}</h2>${about}
         <div class="links"><button type="button" class="btn sm primary" data-go="${a.kod}|alla">Flashcards</button><button type="button" class="btn sm" data-quiz="${a.kod}">Förhör</button></div></div>
         <div class="meter"><span>${r.green} av ${r.n} gröna${r.ignored ? ` · ${r.ignored} ignoreras` : ''}</span>${stackBar(r)}${S.best[a.kod] ? `<span>Bästa förhör ${esc(S.best[a.kod])}</span>` : ''}${wqBtns(r, a.kod + '|')}</div></div>
       <div class="goals">${groups.map(g => { const x = tallyOf(g.fs); return `<div class="goal"><div style="min-width:0"><p><b>${esc(g.namn)}</b></p>
@@ -370,6 +381,7 @@ function renderFilters() {
   if (!D()) return;
   const A = D().amne, FR = F(), b = base();
   $('#kort-eyebrow').textContent = `${A.namn} · Lgr22 åk 7–9`;
+  const sh = $('#v-kort .sec-head'), bild = BILD[S.amne]; sh.classList.toggle('bild', !!bild); sh.style.setProperty('--bild', bild ? `url('${bild}')` : '');
   chips($('#f-niva'), ['E', 'C', 'A'].map(n => [n, `${n} <span class="small" style="font-weight:400">${NIVA[n].kort}</span>`, FR.filter(f => inScope(f) && f.niva === n).length, 'lvchip lv' + n]), S.niva, id => {
     S.niva = S.niva.includes(id) ? S.niva.filter(x => x !== id) : [...S.niva, id].sort((a, c) => 'ECA'.indexOf(a) - 'ECA'.indexOf(c));
     if (!S.niva.length) S.niva = [id];

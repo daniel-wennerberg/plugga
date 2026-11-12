@@ -435,6 +435,8 @@ def bygg_sida(ut):
     (ut / "data" / "fragor").mkdir()
     for f in ("app.css", "common.js"):
         shutil.copy(WEB / f, ut / f)
+    if (WEB / "img").exists():
+        shutil.copytree(WEB / "img", ut / "img")
     html = (WEB / "index.html").read_text()
     tag = '<script src="common.js"></script>'
     assert tag in html
