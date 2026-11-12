@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plugga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%222%22 y=%228%22 width=%2218%22 height=%2218%22 rx=%225%22 fill=%22%232350c8%22/%3E%3Ccircle cx=%2224%22 cy=%2217%22 r=%225%22 fill=%22%23e8930c%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+<style>
+section.view{padding-top:26px}
+/* ämnesväljare */
+.subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:20px}
+.subj{display:grid;gap:8px;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;align-content:start}
+.subj:hover:not(:disabled){border-color:var(--ink)}
+.subj:disabled{opacity:.55;cursor:default;background:transparent}
+.subj b{font-family:var(--display);font-size:1.08rem}
+.subj .lvs{display:flex;gap:6px;align-items:center;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.subj.cur{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+/* flashcards */
+.toolbar{display:grid;gap:10px;margin:12px 0 4px}
+.filt{margin:14px 0 18px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 14px}
+.filt>summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.filt>summary::-webkit-details-marker{display:none}
+.filt>summary::after{content:"Ändra";margin-left:auto;font-weight:700;font-size:.85rem;color:var(--accent)}
+.filt[open]>summary::after{content:"Dölj"}
+.toolbar .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:64px}
+.deck{display:grid;gap:14px;max-width:640px;margin:0 auto}
+.deck-meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.84rem;color:var(--muted);flex-wrap:wrap;align-items:center}
+.flip{perspective:1400px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.flip-in{display:grid;transition:transform .5s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:24px 24px 20px;min-height:300px;display:flex;flex-direction:column;gap:12px}
+.face.back{transform:rotateY(180deg);border-color:var(--accent)}
+.face .q{font-family:var(--display);font-size:clamp(1.3rem,3.6vw,1.75rem);font-weight:700;line-height:1.25;margin:auto 0;text-wrap:balance}
+.face .a{font-size:1.07rem}
+.face .foot{margin-top:auto;display:grid;gap:4px;font-size:.84rem;color:var(--muted)}
+.face-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.mark{display:inline-flex;align-items:center;gap:6px;font-family:var(--body);text-transform:none;letter-spacing:0;font-weight:700;font-size:.8rem}
+.mark i{width:12px;height:12px;border-radius:50%}
+.deck-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.deck-actions button{border-radius:12px;padding:11px 8px;font-weight:700;border:1.5px solid;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.2}
+.deck-actions small{font-weight:400;font-size:.76rem;opacity:.85}
+.b-red{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.b-yellow{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.b-green{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.b-red[aria-pressed="true"]{background:var(--bad);color:var(--card)}
+.b-yellow[aria-pressed="true"]{background:var(--warn);color:var(--card)}
+.b-green[aria-pressed="true"]{background:var(--ok);color:var(--card)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.kbd{font-family:var(--mono);font-size:.74rem;color:var(--muted);text-align:center}
+/* läroplan */
+.lp{display:grid;gap:26px;max-width:820px}
+.lp ol{margin:8px 0 0;padding-left:1.3em;display:grid;gap:6px}
+.ci-group{display:grid;gap:8px;margin-top:10px}
+.ci{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+.ci .cnt{display:flex;gap:4px;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.gradebox{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:10px}
+.gradebox p+p{margin-top:2px}
+@media (max-width:560px){.deck-actions button{padding:10px 4px;font-size:.92rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#amnen"><span class="dot"></span>Plugga</a>
+    <label class="sel" id="amne-wrap" hidden><span>Ämne</span><select id="amne-sel"></select></label>
+    <nav class="tabs" aria-label="Huvudmeny">
+      <a href="#amnen">Ämnen</a>
+      <a href="#kort">Flashcards</a>
+      <a href="#laroplan">Läroplanen</a>
+      <a href="/admin" id="admin-link" hidden>Admin</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="view" id="v-amnen" hidden>
+  <p class="eyebrow">Lgr22 · årskurs 7–9</p>
+  <h1>Vad vill du plugga?</h1>
+  <p class="muted" style="margin-top:8px;max-width:38em">Välj ett ämne. Frågorna har nivå <b>E</b>, <b>C</b> eller <b>A</b> efter läroplanens betygskriterier, så du kan börja med grunderna och sedan gå vidare.</p>
+  <div class="subjects" id="subjects"></div>
+  <div id="subjects-empty" style="margin-top:28px;max-width:46em"></div>
+</section>
+
+<section class="view" id="v-kort" hidden>
+  <div class="row" style="justify-content:space-between;align-items:end">
+    <div><p class="eyebrow" id="kort-eyebrow"></p><h2 id="kort-title">Flashcards</h2></div>
+    <div class="tally" id="kort-tally"></div>
+  </div>
+  <details class="filt" id="filt" open><summary><span class="eyebrow">Filter</span> <span id="filt-sum" class="small"></span></summary>
+  <div class="toolbar">
+    <div class="row"><span class="lbl">Nivå</span><div class="chips" id="f-niva"></div></div>
+    <div class="row" id="f-samling-row"><span class="lbl">Samling</span><div class="chips" id="f-samling"></div></div>
+    <div class="row" id="f-tema-row"><span class="lbl">Tema</span><div class="chips" id="f-tema"></div></div>
+    <div class="row"><span class="lbl">Visa</span><div class="chips" id="f-status"></div>
+      <label class="small muted" style="margin-left:auto;display:flex;gap:6px;align-items:center"><input type="checkbox" id="f-shuffle"> Blanda</label></div>
+  </div></details>
+  <div class="deck" id="deck"></div>
+</section>
+
+<section class="view" id="v-laroplan" hidden>
+  <div id="laroplan" class="lp"></div>
+</section>
+
+</main>
+<script>window.PLUGGA_STATISK = true</script>
+<script src="common.js"></script>
+<script>
+const KEY = 'plugga-v1';
+const S = Object.assign({ amne: null, niva: ['E', 'C', 'A'], samling: 'alla', tema: 'alla', filter: 'alla', shuffle: false, status: {} }, load(KEY, {}));
+const save = () => store(KEY, S);
+const STATUS = { red: { namn: 'Kan inte', c: 'var(--bad)' }, yellow: { namn: 'Kan lite', c: 'var(--warn)' }, green: { namn: 'Kan', c: 'var(--ok)' } };
+const FILTERS = [['alla', 'Alla'], ['ejklar', 'Inte gröna'], ['red', 'Röda'], ['yellow', 'Gula'], ['green', 'Gröna'], ['none', 'Omarkerade']];
+let AMNEN = [], AMNE = null, FRAGOR = [], deck = [], pos = 0, flipped = false, lpNiva = 'E';
+
+/* ---------- data ---------- */
+async function init() {
+  try {
+    const [info, amnen] = await Promise.all([api('info'), api('amnen')]);
+    AMNEN = amnen;
+    $('#admin-link').hidden = !info.admin;
+  } catch (e) { document.querySelector('main').innerHTML = `<div class="empty" style="margin-top:40px">Kan inte nå servern: ${esc(e.message)}</div>`; return; }
+  renderSubjects();
+  if (S.amne && AMNEN.some(a => a.kod === S.amne)) await chooseAmne(S.amne, false);
+  route();
+}
+async function chooseAmne(kod, go = true) {
+  const [a, f] = await Promise.all([api('amne/' + kod), api(`fragor?amne=${kod}&aktiv=1`)]);
+  if (S.amne !== kod) { S.samling = 'alla'; S.tema = 'alla'; S.filter = 'alla'; }
+  S.amne = kod; save();
+  AMNE = a; FRAGOR = f; pos = 0;
+  renderSubjects(); renderAmneSelect(); buildDeck(); renderLaroplan();
+  if (go) location.hash = '#kort';
+}
+
+/* ---------- ämnen ---------- */
+function renderSubjects() {
+  const sorted = AMNEN.filter(a => a.antal).sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
+  const empty = AMNEN.filter(a => !a.antal);
+  $('#subjects-empty').innerHTML = empty.length ? `<p class="eyebrow">Inga frågor än</p><p class="small muted" style="margin-top:6px">${empty.map(a => esc(a.namn)).join(' · ')}</p>` : '';
+  $('#subjects').innerHTML = sorted.map(a => {
+    const mine = a.antal ? progress(a.kod) : null;
+    return `<button class="subj${a.kod === S.amne ? ' cur' : ''}" data-kod="${a.kod}" ${a.antal ? '' : 'disabled'}>
+      <b>${esc(a.namn)}</b>
+      ${a.antal ? `<span class="lvs">${a.antal} frågor · ${['E', 'C', 'A'].map(n => a[n] ? `${lv(n)} ${a[n]}` : '').join(' ')}</span>
+        ${mine && mine.marked ? `<div class="stack" title="${mine.green} gröna av ${a.antal}"><i style="width:${mine.green / a.antal * 100}%;background:var(--ok)"></i><i style="width:${mine.yellow / a.antal * 100}%;background:var(--warn)"></i><i style="width:${mine.red / a.antal * 100}%;background:var(--bad)"></i></div>` : ''}`
+        : '<span class="small muted">Inga frågor än</span>'}
+    </button>`;
+  }).join('');
+}
+$('#subjects').addEventListener('click', e => { const b = e.target.closest('[data-kod]'); if (b && !b.disabled) chooseAmne(b.dataset.kod); });
+function progress(kod) {
+  const r = { red: 0, yellow: 0, green: 0, marked: 0 };
+  if (kod === S.amne) FRAGOR.forEach(f => { const s = S.status[f.id]; if (s) { r[s]++; r.marked++; } });
+  else if (S.byAmne && S.byAmne[kod]) Object.assign(r, S.byAmne[kod]);
+  return r;
+}
+function renderAmneSelect() {
+  const sel = $('#amne-sel');
+  sel.innerHTML = AMNEN.filter(a => a.antal || a.kod === S.amne).map(a => `<option value="${a.kod}"${a.kod === S.amne ? ' selected' : ''}>${esc(a.namn)}</option>`).join('');
+  $('#amne-wrap').hidden = !S.amne;
+}
+$('#amne-sel').addEventListener('change', e => chooseAmne(e.target.value, false));
+
+/* ---------- flashcards ---------- */
+const matchStatus = f => {
+  const s = S.status[f.id];
+  return S.filter === 'alla' || (S.filter === 'ejklar' && s !== 'green') || (S.filter === 'none' && !s) || S.filter === s;
+};
+function base() {
+  return FRAGOR.filter(f => S.niva.includes(f.niva) && (S.samling === 'alla' || f.samling_id == S.samling) && (S.tema === 'alla' || f.tema_id == S.tema));
+}
+function buildDeck(keepId) {
+  if (!AMNE) return;
+  const b = base();
+  let list = b.filter(matchStatus);
+  if (S.shuffle) list = list.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(p => p[1]);
+  deck = list;
+  const k = keepId ? deck.findIndex(f => f.id === keepId) : -1;
+  pos = k >= 0 ? k : Math.min(pos, Math.max(0, deck.length - 1));
+  flipped = false;
+  renderFilters(b);
+  renderCard();
+}
+function chips(el, items, cur, onPick, extra = '') {
+  el.innerHTML = items.map(([id, name, n, cls]) => `<button class="chip ${cls || ''}" data-id="${id}" aria-pressed="${Array.isArray(cur) ? cur.includes(id) : String(cur) === String(id)}">${name}${n !== undefined ? `<span class="n">${n}</span>` : ''}</button>`).join('') + extra;
+  el.onclick = e => { const b = e.target.closest('[data-id]'); if (b) onPick(b.dataset.id); };
+}
+function renderFilters(b) {
+  $('#kort-eyebrow').textContent = `${AMNE.namn} · Lgr22 åk 7–9`;
+  $('#kort-title').textContent = AMNE.namn;
+  const inScope = FRAGOR.filter(f => (S.samling === 'alla' || f.samling_id == S.samling) && (S.tema === 'alla' || f.tema_id == S.tema));
+  chips($('#f-niva'), ['E', 'C', 'A'].map(n => [n, `${n} <span class="small" style="font-weight:400">${NIVA[n].kort}</span>`, inScope.filter(f => f.niva === n).length, 'lvchip lv' + n]), S.niva, id => {
+    S.niva = S.niva.includes(id) ? S.niva.filter(x => x !== id) : [...S.niva, id].sort((a, c) => 'ECA'.indexOf(a) - 'ECA'.indexOf(c));
+    if (!S.niva.length) S.niva = [id];
+    save(); pos = 0; buildDeck();
+  });
+  const sam = AMNE.samlingar.filter(s => s.antal);
+  $('#f-samling-row').hidden = sam.length < 2;
+  chips($('#f-samling'), [['alla', 'Alla'], ...sam.map(s => [s.id, esc(s.namn), FRAGOR.filter(f => f.samling_id === s.id && S.niva.includes(f.niva)).length])], S.samling, id => { S.samling = id; save(); pos = 0; buildDeck(); });
+  const tem = AMNE.teman.filter(t => t.antal);
+  $('#f-tema-row').hidden = !tem.length;
+  chips($('#f-tema'), [['alla', 'Alla'], ...tem.map(t => [t.id, esc(t.namn), FRAGOR.filter(f => f.tema_id === t.id && S.niva.includes(f.niva) && (S.samling === 'alla' || f.samling_id == S.samling)).length])], S.tema, id => { S.tema = id; save(); pos = 0; buildDeck(); });
+  chips($('#f-status'), FILTERS.map(([id, n]) => [id, n, b.filter(f => { const s = S.status[f.id]; return id === 'alla' || (id === 'ejklar' && s !== 'green') || (id === 'none' && !s) || id === s; }).length]), S.filter, id => { S.filter = id; save(); pos = 0; buildDeck(); });
+  $('#f-shuffle').checked = S.shuffle;
+  const nm = (arr, id) => (arr.find(x => String(x.id) === String(id)) || {}).namn;
+  $('#filt-sum').textContent = [S.niva.length === 3 ? 'Alla nivåer' : 'Nivå ' + S.niva.join(', '),
+    S.samling !== 'alla' && nm(AMNE.samlingar, S.samling), S.tema !== 'alla' && nm(AMNE.teman, S.tema),
+    (FILTERS.find(f => f[0] === S.filter) || [])[1] + ' kort', S.shuffle && 'blandat'].filter(Boolean).join(' · ');
+  const r = { red: 0, yellow: 0, green: 0 }; b.forEach(f => { const s = S.status[f.id]; if (s) r[s]++; });
+  $('#kort-tally').innerHTML = `<span><i style="background:var(--ok)"></i>${r.green}</span><span><i style="background:var(--warn)"></i>${r.yellow}</span><span><i style="background:var(--bad)"></i>${r.red}</span><span>av ${b.length}</span>`;
+}
+$('#f-shuffle').addEventListener('change', e => { S.shuffle = e.target.checked; save(); pos = 0; buildDeck(); });
+
+function renderCard() {
+  const el = $('#deck');
+  if (!AMNE) { el.innerHTML = `<div class="empty">Välj ett ämne först. <a href="#amnen">Till ämnena</a></div>`; return; }
+  if (!deck.length) {
+    el.innerHTML = `<div class="empty">${FRAGOR.length ? 'Inga kort matchar filtret.' : 'Det här ämnet har inga frågor än.'}${S.filter !== 'alla' ? ' <button class="btn sm" id="reset-f">Visa alla</button>' : ''}</div>`;
+    const r = $('#reset-f'); if (r) r.onclick = () => { S.filter = 'alla'; save(); buildDeck(); };
+    return;
+  }
+  const f = deck[pos], st = S.status[f.id];
+  const tema = AMNE.teman.find(t => t.id === f.tema_id), sam = AMNE.samlingar.find(s => s.id === f.samling_id);
+  const markHtml = st ? `<span class="mark" style="color:${STATUS[st].c}"><i style="background:${STATUS[st].c}"></i>${STATUS[st].namn}</span>` : '<span class="mark muted">Ej markerad</span>';
+  el.innerHTML = `
+    <div class="deck-meta"><span>${pos + 1} / ${deck.length}</span><span>${esc(tema ? tema.namn : '')}</span></div>
+    <div class="flip${flipped ? ' on' : ''}" id="flip" role="button" tabindex="0" aria-label="Vänd kortet">
+      <div class="flip-in">
+        <div class="face front"><div class="face-head"><span>${lv(f.niva)} Fråga</span>${markHtml}</div>
+          <div class="q rich">${render(f.fraga)}</div>
+          <div class="foot"><span>Tryck eller mellanslag för att vända</span></div></div>
+        <div class="face back"><div class="face-head"><span>${lv(f.niva)} Svar</span>${markHtml}</div>
+          <div class="a rich">${render(f.svar) || '<span class="muted">Inget svar inlagt.</span>'}</div>
+          <div class="foot">${f.kalla ? `<span>Källa: ${esc(f.kalla)}</span>` : ''}${f.ci.length ? `<span title="${esc(f.ci.map(c => c.text).join('\n'))}">Läroplanen: ${esc(f.ci[0].text.slice(0, 90))}${f.ci[0].text.length > 90 ? '…' : ''}${f.ci.length > 1 ? ` (+${f.ci.length - 1})` : ''}</span>` : ''}</div></div>
+      </div>
+    </div>
+    <div class="deck-actions">
+      <button class="b-red" data-m="red" aria-pressed="${st === 'red'}">Kan inte<small>1</small></button>
+      <button class="b-yellow" data-m="yellow" aria-pressed="${st === 'yellow'}">Kan lite<small>2</small></button>
+      <button class="b-green" data-m="green" aria-pressed="${st === 'green'}">Kan<small>3</small></button>
+    </div>
+    <div class="nav"><button class="btn" id="prev" ${pos ? '' : 'disabled'}>← Föregående</button>
+      ${st ? '<button class="btn ghost sm" id="clear">Rensa markering</button>' : '<span></span>'}
+      <button class="btn" id="next" ${pos < deck.length - 1 ? '' : 'disabled'}>Nästa →</button></div>
+    <p class="kbd">Mellanslag vänd · ← → bläddra · 1 2 3 markera · 0 rensa</p>`;
+  $('#flip').onclick = flip;
+  $('#prev').onclick = () => go(pos - 1);
+  $('#next').onclick = () => go(pos + 1);
+  if ($('#clear')) $('#clear').onclick = () => mark(null);
+  $$('[data-m]', el).forEach(b => b.onclick = () => mark(b.dataset.m));
+}
+function flip() { flipped = !flipped; $('#flip').classList.toggle('on', flipped); }
+function go(i) { if (i < 0 || i >= deck.length) return; pos = i; flipped = false; renderCard(); }
+function mark(m) {
+  const f = deck[pos]; if (!f) return;
+  if (!m || S.status[f.id] === m) delete S.status[f.id]; else S.status[f.id] = m;
+  const r = { red: 0, yellow: 0, green: 0, marked: 0 }; FRAGOR.forEach(x => { const s = S.status[x.id]; if (s) { r[s]++; r.marked++; } });
+  S.byAmne = Object.assign(S.byAmne || {}, { [S.amne]: r });
+  save();
+  const id = f.id, stays = matchStatus(f);
+  if (stays) { buildDeck(id); if (m && pos < deck.length - 1) setTimeout(() => go(pos + 1), 250); }
+  else buildDeck();
+  renderSubjects();
+}
+document.addEventListener('keydown', e => {
+  if (location.hash !== '#kort' || e.target.matches('input,select,textarea') || e.metaKey || e.ctrlKey) return;
+  if (e.key === ' ' || e.key === 'Enter') { if (e.target.closest('button') && e.target.id !== 'flip') return; e.preventDefault(); flip(); }
+  else if (e.key === 'ArrowRight') go(pos + 1);
+  else if (e.key === 'ArrowLeft') go(pos - 1);
+  else if (e.key === '1') mark('red'); else if (e.key === '2') mark('yellow'); else if (e.key === '3') mark('green');
+  else if (e.key === '0' || e.key === 'Backspace') mark(null);
+});
+
+/* ---------- läroplan ---------- */
+function renderLaroplan() {
+  const el = $('#laroplan');
+  if (!AMNE) { el.innerHTML = `<div class="empty">Välj ett ämne först. <a href="#amnen">Till ämnena</a></div>`; return; }
+  const groups = {};
+  AMNE.ci.forEach(c => { const k = (c.variant_namn ? c.variant_namn + ' · ' : '') + (c.omrade || ''); (groups[k] = groups[k] || []).push(c); });
+  const variants = [...new Set(AMNE.betyg.map(b => b.variant_namn || ''))];
+  const bt = AMNE.betyg.filter(b => b.betyg === lpNiva);
+  el.innerHTML = `
+    <div><p class="eyebrow">Läroplanen · Lgr22</p><h1>${esc(AMNE.namn)}</h1></div>
+    ${AMNE.mal.length ? `<div><h3>Det här ska du utveckla</h3><p class="muted small" style="margin-top:4px">Ämnets långsiktiga mål. Genom undervisningen ska du ges förutsättningar att utveckla</p><ol>${AMNE.mal.map(m => `<li>${esc(m)}</li>`).join('')}</ol></div>` : ''}
+    <div><h3>Vad krävs för betyget?</h3>
+      <div class="row" style="margin:10px 0"><div class="seg" id="lp-seg">${['E', 'C', 'A'].map(n => `<button class="${n}" data-n="${n}" aria-pressed="${n === lpNiva}">${n}<small>${NIVA[n].kort}</small></button>`).join('')}</div></div>
+      <div class="gradebox">${bt.map(b => `${variants.length > 1 ? `<p class="eyebrow">${esc(b.variant_namn || 'Ordinarie')}</p>` : ''}${esc(b.text).split('\n').map(p => `<p>${p}</p>`).join('')}`).join('<hr style="border:0;border-top:1px solid var(--line);width:100%">') || '<p class="muted">Inga betygskriterier.</p>'}</div>
+    </div>
+    <div><h3>Centralt innehåll åk 7–9</h3><p class="muted small" style="margin-top:4px">Siffrorna visar hur många frågor som övar på varje punkt.</p>
+      ${Object.entries(groups).map(([g, cs]) => `<div class="ci-group"><h4 style="margin-top:14px">${esc(g)}</h4>${cs.map(c => `<div class="ci"><span>${esc(c.text)}</span><span class="cnt">${c.antal ? ['E', 'C', 'A'].map(n => c[n] ? `${lv(n)}${c[n]}` : '').join(' ') : '–'}</span></div>`).join('')}</div>`).join('')}
+    </div>`;
+  $('#lp-seg').onclick = e => { const b = e.target.closest('[data-n]'); if (b) { lpNiva = b.dataset.n; renderLaroplan(); } };
+}
+
+/* ---------- routing ---------- */
+const VIEWS = ['amnen', 'kort', 'laroplan'];
+function route() {
+  let v = location.hash.slice(1);
+  if (!VIEWS.includes(v)) v = S.amne ? 'kort' : 'amnen';
+  VIEWS.forEach(x => $('#v-' + x).hidden = x !== v);
+  $$('nav.tabs a').forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + v ? 'page' : 'false'));
+  if (v === 'kort') renderCard();
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+if (window.innerWidth < 700) $('#filt').open = false;
+init();
+</script>
+</body>
+</html>
