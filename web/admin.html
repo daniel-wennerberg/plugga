@@ -188,7 +188,7 @@ function filtered() {
     (F.granskad === '' || f.granskad == F.granskad) &&
     (F.aktiv === '' || f.aktiv == F.aktiv) &&
     (!F.ci || (F.ci === 'ingen' ? !f.ci.length : F.ci === 'andrad' ? f.ci.some(c => c.status !== 'ok') : f.ci.some(c => c.nyckel === F.ci))) &&
-    (!q || (f.fraga + ' ' + f.svar + ' ' + f.kalla).toLowerCase().includes(q)));
+    (!q || (f.fraga + ' ' + f.svar + ' ' + (f.svar_kort || '') + ' ' + f.kalla).toLowerCase().includes(q)));
 }
 function renderFragor() {
   $('#f-eyebrow').textContent = 'Lgr22 · åk 7–9';
@@ -282,7 +282,7 @@ $('#bulk').addEventListener('change', e => {
 });
 
 /* ---------------- redigerare ---------------- */
-const blank = () => ({ fraga: '', svar: '', niva: 'E', tema_id: null, samling_id: null, kalla: '', granskad: false, aktiv: true, ci: [] });
+const blank = () => ({ fraga: '', svar: '', svar_kort: '', niva: 'E', tema_id: null, samling_id: null, kalla: '', granskad: false, aktiv: true, ci: [] });
 function openEditor(id, force = false) {
   if (!force && dirty && id !== EDIT) { showDirty(() => openEditor(id, true)); return; }
   EDIT = id; dirty = false;
@@ -331,6 +331,7 @@ function renderEditor() {
     <div class="field"><label for="e-fraga">Fråga</label><textarea id="e-fraga" rows="2">${esc(d.fraga)}</textarea></div>
     <div class="field"><label for="e-svar">Svar</label><textarea id="e-svar" rows="5">${esc(d.svar)}</textarea>
       <span class="hint">**fetstil** · radbrytning = ny rad · kemiska formler i klamrar: {H2O} blir H₂O · enkel HTML (&lt;strong&gt;, &lt;sub&gt;, &lt;ul&gt;) går också</span></div>
+    <div class="field"><label for="e-kort">Förenklat svar <span class="muted" style="font-weight:400">(valfritt – 1–2 meningar, visas när eleven väljer förenklade svar)</span></label><textarea id="e-kort" rows="2">${esc(d.svar_kort || '')}</textarea></div>
     <div class="field"><span class="lbl">Förhandsvisning</span><div class="preview"><div class="pv">${lv(d.niva)}<div class="q rich" id="pv-q">${render(d.fraga) || '<span class="muted">Fråga…</span>'}</div></div><div class="pv back"><div class="rich" id="pv-a">${render(d.svar) || '<span class="muted">Svar…</span>'}</div></div></div></div>
     <div class="field"><span class="lbl">Nivå</span>
       <div class="seg" id="e-niva">${['E', 'C', 'A'].map(n => `<button type="button" class="${n}" data-n="${n}" aria-pressed="${d.niva === n}">${n}<small>${NIVA[n].hint}</small></button>`).join('')}</div>
@@ -356,6 +357,7 @@ function renderEditor() {
   const touch = () => { dirty = true; };
   $('#e-fraga').oninput = e => { d.fraga = e.target.value; $('#pv-q').innerHTML = render(d.fraga) || '<span class="muted">Fråga…</span>'; touch(); };
   $('#e-svar').oninput = e => { d.svar = e.target.value; $('#pv-a').innerHTML = render(d.svar) || '<span class="muted">Svar…</span>'; touch(); };
+  $('#e-kort').oninput = e => { d.svar_kort = e.target.value; touch(); };
   $('#e-kalla').oninput = e => { d.kalla = e.target.value; touch(); };
   $('#e-granskad').onchange = e => { d.granskad = e.target.checked; touch(); };
   $('#e-aktiv').onchange = e => { d.aktiv = e.target.checked; touch(); };
@@ -386,7 +388,7 @@ function renderEditor() {
 async function saveEditor(andNew) {
   const d = DRAFT;
   if (!d.fraga.trim()) { toast('Skriv en fråga först', true); $('#e-fraga').focus(); return false; }
-  const body = { amne_kod: A.kod, fraga: d.fraga, svar: d.svar, niva: d.niva, tema_id: d.tema_id, samling_id: d.samling_id, kalla: d.kalla, granskad: d.granskad, aktiv: d.aktiv, ci: d.ci };
+  const body = { amne_kod: A.kod, fraga: d.fraga, svar: d.svar, svar_kort: d.svar_kort || '', niva: d.niva, tema_id: d.tema_id, samling_id: d.samling_id, kalla: d.kalla, granskad: d.granskad, aktiv: d.aktiv, ci: d.ci };
   try {
     const r = EDIT === 'ny' ? await api('fragor', { method: 'POST', body }) : await api('fragor/' + EDIT, { method: 'PUT', body });
     dirty = false; toast(EDIT === 'ny' ? 'Frågan är sparad' : 'Ändringarna är sparade');

@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS fraga (
   amne_kod TEXT NOT NULL,                       -- amne.kod, t.ex. GRGRKEM01
   fraga TEXT NOT NULL,
   svar TEXT NOT NULL DEFAULT '',
+  svar_kort TEXT NOT NULL DEFAULT '',           -- förenklat svar (tomt = bara svar finns)
   niva TEXT NOT NULL DEFAULT 'E' CHECK (niva IN ('E','C','A')),
   tema_id INTEGER REFERENCES tema(id) ON DELETE SET NULL,
   samling_id INTEGER REFERENCES samling(id) ON DELETE SET NULL,
@@ -72,6 +73,8 @@ def init_db(path):
     db = connect(path)
     db.execute("PRAGMA journal_mode = WAL")
     db.executescript(SCHEMA)
+    if "svar_kort" not in {r[1] for r in db.execute("PRAGMA table_info(fraga)")}:
+        db.execute("ALTER TABLE fraga ADD COLUMN svar_kort TEXT NOT NULL DEFAULT ''")
     db.commit()
     db.close()
 
@@ -140,7 +143,7 @@ def list_fragor(db, q):
     elif one("ci"):
         where.append("EXISTS (SELECT 1 FROM fraga_ci x WHERE x.fraga_id = f.id AND x.ci_nyckel = ?)"); args.append(one("ci"))
     if one("q"):
-        where.append("(f.fraga LIKE ? OR f.svar LIKE ? OR f.kalla LIKE ?)"); args += [f"%{one('q')}%"] * 3
+        where.append("(f.fraga LIKE ? OR f.svar LIKE ? OR f.svar_kort LIKE ? OR f.kalla LIKE ?)"); args += [f"%{one('q')}%"] * 4
     out = rows(db.execute(f"""SELECT f.* FROM fraga f
       LEFT JOIN tema t ON t.id = f.tema_id LEFT JOIN samling s ON s.id = f.samling_id
       WHERE {' AND '.join(where)}
@@ -185,7 +188,8 @@ def clean_fraga(db, b, kod):
     niva = b.get("niva", "E")
     if niva not in NIVAER:
         raise ApiError(400, "Nivå måste vara E, C eller A")
-    return dict(fraga=fr, svar=(b.get("svar") or "").strip(), niva=niva,
+    return dict(fraga=fr, svar=(b.get("svar") or "").strip(),
+                svar_kort=(b.get("svar_kort") or "").strip(), niva=niva,
                 tema_id=owned(db, "tema", b.get("tema_id"), kod),
                 samling_id=owned(db, "samling", b.get("samling_id"), kod),
                 kalla=(b.get("kalla") or "").strip(), granskad=1 if b.get("granskad") else 0,
@@ -278,7 +282,8 @@ def export(db, kod):
     return {"format": "plugga-fragor-v1", "amne_kod": kod, "amne": a["namn"],
             "teman": [t["namn"] for t in a["teman"]],
             "samlingar": [{"namn": s["namn"], "beskrivning": s["beskrivning"]} for s in a["samlingar"]],
-            "fragor": [{"fraga": f["fraga"], "svar": f["svar"], "niva": f["niva"], "tema": tn.get(f["tema_id"]),
+            "fragor": [{"fraga": f["fraga"], "svar": f["svar"], **({"svar_kort": f["svar_kort"]} if f["svar_kort"] else {}),
+                        "niva": f["niva"], "tema": tn.get(f["tema_id"]),
                         "samling": sn.get(f["samling_id"]), "kalla": f["kalla"], "granskad": bool(f["granskad"]),
                         "aktiv": bool(f["aktiv"]), "ci": [c["nyckel"] for c in f["ci"]]} for f in fr]}
 

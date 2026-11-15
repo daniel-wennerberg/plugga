@@ -17,7 +17,8 @@
  "fragor": [
   {
    "fraga": "Vilka tre delar har analysmodellen som används för att undersöka en revolution?",
-   "svar": "<strong>Orsaker</strong>, <strong>händelser</strong> och <strong>konsekvenser</strong>.",
+   "svar": "<strong>Orsaker</strong> (varför hände det?), <strong>händelser</strong> (vad hände?) och <strong>konsekvenser</strong> (vad ledde det till?).\nBoken följer samma ordning: ”Vilka var orsakerna till frihetskriget? Vad hände under kriget? Vilka konsekvenser fick det?”",
+   "svar_kort": "<strong>Orsaker</strong>, <strong>händelser</strong> och <strong>konsekvenser</strong>.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -30,7 +31,8 @@
   },
   {
    "fraga": "Vad står KEPS för?",
-   "svar": "<strong>K</strong>ultur, <strong>E</strong>konomi, <strong>P</strong>olitik, <strong>S</strong>ocialt.",
+   "svar": "<strong>K</strong>ultur, <strong>E</strong>konomi, <strong>P</strong>olitik och <strong>S</strong>ocialt. Boken skriver att <strong>kulturella, ekonomiska och politiska orsaker samverkade</strong>, alltså ledde tillsammans fram till frihetskriget.",
+   "svar_kort": "<strong>K</strong>ultur, <strong>E</strong>konomi, <strong>P</strong>olitik, <strong>S</strong>ocialt.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -43,7 +45,8 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>kultur</em> om? Ge exempel.",
-   "svar": "<strong>Idéer och tro</strong>. Ex: <strong>upplysningens idéer</strong>.",
+   "svar": "Idéer, tankar, tro och religion. Ex. ur boken: <strong>upplysningens idéer</strong> om förnuft, frihet, tolerans och jämlikhet, och <strong>sekulariseringen</strong> – religionens minskade betydelse efter franska revolutionen.",
+   "svar_kort": "<strong>Idéer och tro</strong>. Ex: <strong>upplysningens idéer</strong>.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -56,7 +59,8 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>ekonomi</em> om? Ge exempel.",
-   "svar": "<strong>Pengar och skatter</strong>. Ex: <strong>extra skatter</strong> på koloniernas handel.",
+   "svar": "Pengar, skatter och handel. Ex. ur boken: Storbritannien tog ut <strong>extra skatter och avgifter</strong> på koloniernas handel efter sjuårskriget, och den <strong>franska staten saknade pengar</strong> och var nära ekonomiskt sammanbrott.",
+   "svar_kort": "<strong>Pengar och skatter</strong>. Ex: <strong>extra skatter</strong> på koloniernas handel.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -69,7 +73,8 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>politik</em> om? Ge exempel.",
-   "svar": "<strong>Vem som bestämmer</strong>. Ex: kolonisterna fick <strong>inte sitta i parlamentet</strong>.",
+   "svar": "Makt, styrelseskick och lagar – vem som bestämmer. Ex. ur boken: kolonisterna fick <strong>inte sitta i brittiska parlamentet</strong>; i Frankrike <strong>avsattes kungen 1792</strong> och landet blev republik.",
+   "svar_kort": "<strong>Vem som bestämmer</strong>. Ex: kolonisterna fick <strong>inte sitta i parlamentet</strong>.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -82,7 +87,8 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>socialt</em> om? Ge exempel.",
-   "svar": "<strong>Hur människor lever</strong>. Ex: <strong>ståndssamhället</strong> i Frankrike.",
+   "svar": "Hur människor lever och hur samhället är indelat i grupper och klasser. Ex. ur boken: <strong>ståndssamhället</strong> i Frankrike där bönderna levde nära svältgränsen, och att kvinnor, afroamerikaner och ursprungsbefolkning blev <strong>utan rättigheter</strong> i USA.",
+   "svar_kort": "<strong>Hur människor lever</strong>. Ex: <strong>ståndssamhället</strong> i Frankrike.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -95,7 +101,8 @@
   },
   {
    "fraga": "Vad är en revolution?",
-   "svar": "En <strong>snabb och stor förändring</strong> av samhället, ofta när folket gör revolt.",
+   "svar": "En <strong>snabb och genomgripande förändring</strong> av samhället, ofta när folket gör revolt mot de styrande. Boken: den amerikanska och den franska revolutionen <strong>förändrade synen på hur riken kan styras</strong> och vilka friheter och rättigheter medborgare ska ha.",
+   "svar_kort": "En <strong>snabb och stor förändring</strong> av samhället, ofta när folket gör revolt.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -108,7 +115,8 @@
   },
   {
    "fraga": "Vad är skillnaden mellan kortsiktiga och långsiktiga konsekvenser?",
-   "svar": "<strong>Kortsiktiga</strong> märks direkt (kungen avrättas 1793). <strong>Långsiktiga</strong> märks än idag (USA:s författning).",
+   "svar": "Boken: frihetskriget fick <strong>följder både på kort och lång sikt</strong>.\n<strong>Kortsiktiga</strong> märks direkt eller inom några år, t.ex. att Ludvig XVI avrättades 1793. <strong>Långsiktiga</strong> påverkar i hundratals år, t.ex. att 1789 års amerikanska författning gäller än i dag och att nya ideologier växte fram.",
+   "svar_kort": "<strong>Kortsiktiga</strong> märks direkt (kungen avrättas 1793). <strong>Långsiktiga</strong> märks än idag (USA:s författning).",
    "niva": "C",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -121,7 +129,8 @@
   },
   {
    "fraga": "Varför är det bra att använda både analysmodellen och KEPS när man förklarar en revolution?",
-   "svar": "Analysmodellen ger <strong>ordning</strong>. KEPS visar att orsakerna <strong>samverkade</strong>.",
+   "svar": "Analysmodellen ger ordning (orsak → händelse → konsekvens). KEPS visar att orsakerna finns inom <strong>flera områden samtidigt</strong> – boken skriver att kulturella, ekonomiska och politiska orsaker <strong>samverkade</strong>. Då kan man förklara och jämföra, inte bara räkna upp.",
+   "svar_kort": "Analysmodellen ger <strong>ordning</strong>. KEPS visar att orsakerna <strong>samverkade</strong>.",
    "niva": "C",
    "tema": "Analysmodell & KEPS",
    "samling": "Historia - Revolution (Bok)",
@@ -134,7 +143,8 @@
   },
   {
    "fraga": "Vilket land var de tretton kolonierna i Nordamerika styrda av före revolutionen?",
-   "svar": "<strong>Storbritannien</strong>.",
+   "svar": "<strong>Storbritannien</strong>. På Nordamerikas östkust hade Storbritannien grundat 13 kolonier.",
+   "svar_kort": "<strong>Storbritannien</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -147,7 +157,8 @@
   },
   {
    "fraga": "Vad var upplysningen?",
-   "svar": "Ett sätt att tänka på 1600–1700-talet: <strong>tro på människans förnuft</strong> och rätt att säga sin åsikt.",
+   "svar": "En <strong>intellektuell strömning</strong> under 1600- och 1700-talet, ett sätt att se på människan och samhället. Den byggde på en stark tro på <strong>människans förnuft och rätt att framföra åsikter</strong>. Störst genomslag i Frankrike.",
+   "svar_kort": "Ett sätt att tänka på 1600–1700-talet: <strong>tro på människans förnuft</strong> och rätt att säga sin åsikt.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -160,7 +171,8 @@
   },
   {
    "fraga": "Vad var Boston Tea Party (1773)?",
-   "svar": "<strong>1773</strong> kastade kolonister <strong>te i Bostons hamn</strong> i protest mot teskatten.",
+   "svar": "Kvällen <strong>16 december 1773</strong> smög ett femtiotal kolonister, utklädda till amerikansk urbefolkning, ombord på tre brittiska skepp i Bostons hamn och <strong>kastade teet i havet</strong> – en protest mot den extra skatten på te. Parlamentet svarade med att <strong>stänga Bostons hamn</strong> och begränsa självstyret.",
+   "svar_kort": "<strong>1773</strong> kastade kolonister <strong>te i Bostons hamn</strong> i protest mot teskatten.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -173,7 +185,8 @@
   },
   {
    "fraga": "Vad betyder parollen ”No taxation without representation”?",
-   "svar": "Kolonisterna fick <strong>inte vara med och bestämma</strong> – då skulle de <strong>inte heller betala skatt</strong>.",
+   "svar": "”<strong>Ingen beskattning utan representation</strong>”. Kolonisterna fick inte sitta i brittiska parlamentet och menade att hemlandet inte hade rätt att kräva skattepengar <strong>utan att invånarna också fick vara med och bestämma</strong>.",
+   "svar_kort": "Kolonisterna fick <strong>inte vara med och bestämma</strong> – då skulle de <strong>inte heller betala skatt</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -186,7 +199,8 @@
   },
   {
    "fraga": "Förklara de ekonomiska orsakerna till den amerikanska revolutionen.",
-   "svar": "<strong>Sjuårskriget</strong> var dyrt, så Storbritannien tog ut <strong>extra skatter</strong> på koloniernas handel.",
+   "svar": "<strong>Sjuårskriget</strong> (1756–1763) mot Frankrike var dyrt. För att öka sina inkomster tog Storbritannien ut <strong>extra skatter och avgifter på koloniernas handel</strong>, vilket skapade missnöje. Handeln styrdes dessutom av hemlandet – kolonisterna ville <strong>själva besluta över koloniernas ekonomi</strong>.",
+   "svar_kort": "<strong>Sjuårskriget</strong> var dyrt, så Storbritannien tog ut <strong>extra skatter</strong> på koloniernas handel.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -199,7 +213,8 @@
   },
   {
    "fraga": "Förklara de politiska orsakerna till den amerikanska revolutionen.",
-   "svar": "Kolonisterna fick <strong>inte sitta i parlamentet</strong> och kunde inte påverka besluten.",
+   "svar": "Kolonierna skötte mycket själva, men <strong>utrikespolitiken och handeln styrdes av Storbritannien</strong>. Kolonisterna kunde <strong>inte påverka besluten</strong> i brittiska parlamentet eftersom de inte fick sitta där. De ville ha ökad politisk frihet.",
+   "svar_kort": "Kolonisterna fick <strong>inte sitta i parlamentet</strong> och kunde inte påverka besluten.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -212,7 +227,8 @@
   },
   {
    "fraga": "Hur påverkade upplysningstankarna den amerikanska revolutionen?",
-   "svar": "<strong>Naturrätt</strong>: alla har medfödda rättigheter. <strong>Locke</strong>: om kungen sviker får folket <strong>göra uppror</strong>.",
+   "svar": "Upplysningens idéer passade ihop med kolonisternas dröm om ett samhälle byggt på <strong>jämlikhet och tolerans</strong>. <strong>Naturrätt</strong>: människan har medfödda rättigheter som inte får kränkas. <strong>John Locke</strong>: härskare och invånare ingår ett <strong>samhällskontrakt</strong> – misslyckas härskaren kan det vara rätt att revoltera.",
+   "svar_kort": "<strong>Naturrätt</strong>: alla har medfödda rättigheter. <strong>Locke</strong>: om kungen sviker får folket <strong>göra uppror</strong>.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -225,7 +241,8 @@
   },
   {
    "fraga": "Vad hände 4 juli 1776?",
-   "svar": "<strong>Självständighetsförklaringen</strong> – USA grundades.",
+   "svar": "De 13 kolonierna förklarade sig <strong>självständiga från Storbritannien</strong> genom <strong>självständighetsförklaringen</strong>. Amerikas förenta stater grundades. 4 juli är USA:s nationaldag.",
+   "svar_kort": "<strong>Självständighetsförklaringen</strong> – USA grundades.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -238,7 +255,8 @@
   },
   {
    "fraga": "Vem skrev självständighetsförklaringen och vad är dess mest kända tanke?",
-   "svar": "<strong>Thomas Jefferson</strong>. ”<strong>Alla människor är skapade lika</strong>.”",
+   "svar": "Till stor del <strong>Thomas Jefferson</strong> (1743–1826). ”Vi anser dessa sanningar självklara: att <strong>alla människor är skapade lika</strong>, att de av sin Skapare utrustats med vissa obestridliga rättigheter, att till dem hör <strong>liv, frihet och strävan efter lycka</strong>.”",
+   "svar_kort": "<strong>Thomas Jefferson</strong>. ”<strong>Alla människor är skapade lika</strong>.”",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -251,7 +269,8 @@
   },
   {
    "fraga": "Hur slutade frihetskriget mellan kolonierna och Storbritannien?",
-   "svar": "Kolonierna <strong>vann</strong> med hjälp av <strong>Frankrike</strong>. Fred <strong>1783</strong>.",
+   "svar": "Vändningen kom vid <strong>Saratoga 1777</strong>. Då vågade <strong>Frankrike</strong> stödja kolonierna, senare även Spanien och Nederländerna. Britterna besegrades vid <strong>Yorktown 1781</strong>, och <strong>fredsavtalet</strong> skrevs 1783.",
+   "svar_kort": "Kolonierna <strong>vann</strong> med hjälp av <strong>Frankrike</strong>. Fred <strong>1783</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -264,7 +283,8 @@
   },
   {
    "fraga": "Vem blev USA:s första president?",
-   "svar": "<strong>George Washington</strong>, arméns ledare i kriget.",
+   "svar": "<strong>George Washington</strong>, som under kriget varit kolonisternas <strong>överbefälhavare</strong> (högsta militära ledare).",
+   "svar_kort": "<strong>George Washington</strong>, arméns ledare i kriget.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -277,7 +297,8 @@
   },
   {
    "fraga": "Varför kallas USA ”den första moderna republiken”?",
-   "svar": "Ingen kung – en <strong>folkvald president</strong>. <strong>Makten delas</strong> mellan president, kongress och domstol.",
+   "svar": "USA fick ingen kung. Statschefen, en <strong>folkvald president</strong>, väljs av folket – det kallas <strong>republik</strong>. Enligt <strong>1789 års författning</strong> delas makten mellan presidenten, <strong>kongressen</strong> och <strong>Högsta domstolen</strong>. Därför kan USA ses som en av <strong>världens första demokratier</strong>.",
+   "svar_kort": "Ingen kung – en <strong>folkvald president</strong>. <strong>Makten delas</strong> mellan president, kongress och domstol.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -291,7 +312,8 @@
   },
   {
    "fraga": "Vilka konsekvenser fick den amerikanska revolutionen?",
-   "svar": "<ul><li><strong>USA</strong> bildades</li><li><strong>Författningen</strong> gäller än idag</li><li>Demokrati – men <strong>inte för alla</strong></li><li><strong>Förebild</strong> för Europa</li></ul>",
+   "svar": "<ul><li><strong>USA</strong> bildades som egen nation</li><li><strong>1789 års författning</strong> med maktfördelning – gäller än i dag och har inspirerat andra länder</li><li>Demokrati med val, men <strong>inte för alla</strong>: slaveri till 1865, bara fria män fick rösta</li><li>Lojalister förföljdes, ca 80 000 flydde</li><li><strong>Förebild i Europa</strong>: det gick att göra revolt och klara sig utan kungamakt</li></ul>",
+   "svar_kort": "<ul><li><strong>USA</strong> bildades</li><li><strong>Författningen</strong> gäller än idag</li><li>Demokrati – men <strong>inte för alla</strong></li><li><strong>Förebild</strong> för Europa</li></ul>",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -304,7 +326,8 @@
   },
   {
    "fraga": "Hur bidrog den amerikanska revolutionen till att den franska revolutionen bröt ut?",
-   "svar": "<ul><li>Visade att <strong>kamp kunde löna sig</strong></li><li>Kriget gjorde <strong>Frankrike fattigt</strong></li></ul>",
+   "svar": "Kriget visade att <strong>kamp kunde löna sig</strong>. Frankrike deltog på kolonisternas sida, och franska soldater kom hem och visste att en ny samhällsordning var möjlig – <strong>en stat utan kung, adel och statskyrka</strong>. Samtidigt <strong>kostade kriget Frankrike mycket</strong>; i slutet av 1780-talet var riket nära ekonomiskt sammanbrott. Revolutionen bröt ut 1789, samma år som USA:s författning antogs.",
+   "svar_kort": "<ul><li>Visade att <strong>kamp kunde löna sig</strong></li><li>Kriget gjorde <strong>Frankrike fattigt</strong></li></ul>",
    "niva": "A",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -317,7 +340,8 @@
   },
   {
    "fraga": "Gällde frihet och jämlikhet i det nya USA alla människor? Resonera.",
-   "svar": "<strong>Nej.</strong> Bara <strong>fria män</strong> fick rösta. <strong>Kvinnor, slavar och ursprungsbefolkning</strong> fick inga rättigheter.",
+   "svar": "Nej. Bara <strong>fria män</strong> fick bli medborgare med rösträtt, i vissa delstater bara förmögna män. <strong>Kvinnor, afroamerikaner och ursprungsbefolkningen</strong> blev utan rättigheter, och <strong>slaveriet fanns kvar till 1865</strong>. Många som skrev under självständighetsförklaringen var slavägare, t.ex. Jefferson. Men idéerna gick att använda: <strong>Mum Bett</strong> frigavs 1781 genom att hänvisa till författningen.",
+   "svar_kort": "<strong>Nej.</strong> Bara <strong>fria män</strong> fick rösta. <strong>Kvinnor, slavar och ursprungsbefolkning</strong> fick inga rättigheter.",
    "niva": "A",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -330,7 +354,8 @@
   },
   {
    "fraga": "Sortera den amerikanska revolutionens orsaker enligt KEPS.",
-   "svar": "<ul><li><strong>K</strong>: upplysningens idéer</li><li><strong>E</strong>: extra skatter</li><li><strong>P</strong>: ingen plats i parlamentet</li><li><strong>S</strong>: inte samma rättigheter som britter</li></ul>",
+   "svar": "<ul><li><strong>K</strong>: upplysningens idéer – naturrätt, tolerans, Lockes samhällskontrakt</li><li><strong>E</strong>: extra skatter och avgifter efter sjuårskriget; handeln styrdes från Storbritannien</li><li><strong>P</strong>: ingen representation i parlamentet – ”ingen beskattning utan representation”</li><li><strong>S</strong>: kolonisterna, främst jordbrukare och handelsmän, hade inte samma rättigheter som andra britter</li></ul>",
+   "svar_kort": "<ul><li><strong>K</strong>: upplysningens idéer</li><li><strong>E</strong>: extra skatter</li><li><strong>P</strong>: ingen plats i parlamentet</li><li><strong>S</strong>: inte samma rättigheter som britter</li></ul>",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -343,7 +368,8 @@
   },
   {
    "fraga": "Vilka var de tre stånden i Frankrike före revolutionen?",
-   "svar": "<ol><li><strong>Adeln</strong></li><li><strong>Prästerna</strong></li><li><strong>Tredje ståndet</strong> – alla andra (98 %)</li></ol>",
+   "svar": "<ol><li><strong>Adeln</strong></li><li><strong>Prästerna</strong></li><li><strong>Tredje ståndet</strong> – främst bönder, hantverkare och handelsmän, <strong>98 procent</strong> av befolkningen</li></ol>",
+   "svar_kort": "<ol><li><strong>Adeln</strong></li><li><strong>Prästerna</strong></li><li><strong>Tredje ståndet</strong> – alla andra (98 %)</li></ol>",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -356,7 +382,8 @@
   },
   {
    "fraga": "Varför var ståndssamhället orättvist?",
-   "svar": "Adel och präster <strong>slapp skatt</strong>. <strong>Tredje ståndet</strong> var 98 % av folket men hade <strong>minst makt</strong>.",
+   "svar": "Adel och präster hade <strong>privilegier</strong>: de var så gott som fria från skatt, och adelsmännen fick driva in skatter från bönderna – lika höga oavsett skörd, så många bönder levde nära svältgränsen. Tredje ståndet var 98 % av folket men hade <strong>begränsad politisk makt</strong>, och den som protesterade riskerade hårda straff.",
+   "svar_kort": "Adel och präster <strong>slapp skatt</strong>. <strong>Tredje ståndet</strong> var 98 % av folket men hade <strong>minst makt</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -369,7 +396,8 @@
   },
   {
    "fraga": "Vem var kung i Frankrike när revolutionen bröt ut?",
-   "svar": "<strong>Ludvig XVI</strong>.",
+   "svar": "<strong>Ludvig XVI</strong> (1754–1793). Drottning var <strong>Marie Antoinette</strong> (1755–1793). Båda avrättades 1793.",
+   "svar_kort": "<strong>Ludvig XVI</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -382,7 +410,8 @@
   },
   {
    "fraga": "Förklara de ekonomiska orsakerna till franska revolutionen.",
-   "svar": "Staten <strong>saknade pengar</strong> efter krig, <strong>adeln slapp skatt</strong> och <strong>dåliga skördar</strong> gav svält.",
+   "svar": "Staten <strong>saknade pengar</strong>, till stor del på grund av alla krig – bl.a. stödet till kolonisterna i Nordamerika. I slutet av 1780-talet var riket <strong>nära ekonomiskt sammanbrott</strong>. Det var svårt att få adeln och kyrkans män att betala skatt, och <strong>dåliga skördar</strong> gjorde att de fattiga svalt.",
+   "svar_kort": "Staten <strong>saknade pengar</strong> efter krig, <strong>adeln slapp skatt</strong> och <strong>dåliga skördar</strong> gav svält.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -395,7 +424,8 @@
   },
   {
    "fraga": "Vilka upplysningsfilosofer påverkade franska revolutionen och vad tyckte de?",
-   "svar": "<ul><li><strong>Voltaire & Rousseau</strong>: alla är <strong>lika mycket värda</strong></li><li><strong>Montesquieu</strong>: <strong>maktfördelning</strong></li></ul>",
+   "svar": "<ul><li><strong>Voltaire</strong> och <strong>Rousseau</strong>: alla människor är <strong>lika mycket värda</strong> – ståndssamhället var orättvist</li><li><strong>Montesquieu</strong>: <strong>maktfördelning</strong>, ingen ska ensam ha för mycket makt</li></ul>Idéerna diskuterades bl.a. i <strong>salonger</strong>.",
+   "svar_kort": "<ul><li><strong>Voltaire & Rousseau</strong>: alla är <strong>lika mycket värda</strong></li><li><strong>Montesquieu</strong>: <strong>maktfördelning</strong></li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -408,7 +438,8 @@
   },
   {
    "fraga": "Vad var generalständerna och varför samlades de 1789?",
-   "svar": "Ett möte med <strong>de tre stånden</strong>. Kungen kallade in dem <strong>1789</strong> för att landet <strong>saknade pengar</strong>.",
+   "svar": "Ett slags <strong>parlament</strong> där ledamöter från de tre stånden satt. De samlades i <strong>maj 1789</strong>, första gången på 175 år, eftersom Frankrikes <strong>dåliga ekonomi</strong> tvingade kungen att be om hjälp. Varje stånd hade en röst, så adel och präster kunde köra över tredje ståndet. Tredje ståndet (600 ledamöter) krävde en röst per ledamot, men det avvisades.",
+   "svar_kort": "Ett möte med <strong>de tre stånden</strong>. Kungen kallade in dem <strong>1789</strong> för att landet <strong>saknade pengar</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -421,7 +452,8 @@
   },
   {
    "fraga": "Vad var bollhuseden?",
-   "svar": "Tredje ståndet lovade att <strong>inte ge sig förrän Frankrike fått en författning</strong> (juni 1789).",
+   "svar": "<strong>20 juni 1789</strong> samlades tredje ståndets ledamöter i en tennishall, Bollhuset, i Versailles. De lovade att <strong>ingen skulle lämna lokalen</strong> förrän en författning godkände <strong>nationalförsamlingen</strong> (bildad 17 juni) som landets beslutande organ. Efter ett par veckor gav kungen efter.",
+   "svar_kort": "Tredje ståndet lovade att <strong>inte ge sig förrän Frankrike fått en författning</strong> (juni 1789).",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -434,7 +466,8 @@
   },
   {
    "fraga": "Vad hände 14 juli 1789?",
-   "svar": "<strong>Stormningen av Bastiljen</strong> – revolutionen började.",
+   "svar": "<strong>Stormningen av Bastiljen</strong>, startskottet för revolutionen. Ett rykte sa att kungen gömde vapen i fästningen för att storma nationalförsamlingen. Folkmassan krävde vapnen och stormade fästningen. Upploppen spreds över Frankrike. 14 juli är Frankrikes nationaldag.",
+   "svar_kort": "<strong>Stormningen av Bastiljen</strong> – revolutionen började.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -447,7 +480,8 @@
   },
   {
    "fraga": "Vad var ”Deklarationen om människans och medborgarens rättigheter” (1789)?",
-   "svar": "Den slog fast att <strong>alla fria män har rättigheter</strong>. <strong>Kvinnor</strong> räknades inte.",
+   "svar": "<strong>Förklaring om de mänskliga rättigheterna</strong>, antagen <strong>26 augusti 1789</strong>: alla fria män har vissa rättigheter och skyldigheter. Ludvig XVI vägrade först godkänna den, men tvingades efter <strong>kvinnotåget till Versailles</strong>. Rättigheterna gällde inte alla – <strong>kvinnor</strong> räknades inte som medborgare.",
+   "svar_kort": "Den slog fast att <strong>alla fria män har rättigheter</strong>. <strong>Kvinnor</strong> räknades inte.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -460,7 +494,8 @@
   },
   {
    "fraga": "Vilka tre ord blev franska revolutionens motto?",
-   "svar": "<strong>Frihet, jämlikhet, broderskap</strong>.",
+   "svar": "<strong>Frihet, jämlikhet, broderskap</strong>. Frihet = rätten att fritt uttrycka åsikter, jämlikhet = inga grupper ska ha särskilda privilegier, broderskap = människor ska stödja varandra.",
+   "svar_kort": "<strong>Frihet, jämlikhet, broderskap</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -473,7 +508,8 @@
   },
   {
    "fraga": "Hur gick Frankrike från monarki till republik?",
-   "svar": "<strong>1792</strong> avsattes kungen och Frankrike blev <strong>republik</strong>. <strong>1793</strong> avrättades han.",
+   "svar": "1789 tog <strong>nationalförsamlingen</strong> makten att stifta lagar och adelns privilegier avskaffades. I <strong>april 1792</strong> började krig mot Österrike. Kungen hade ställt sig på <strong>Österrikes sida</strong> och hoppades få tillbaka sin makt. I <strong>augusti 1792</strong> avsattes han för landsförräderi och Frankrike blev <strong>republik</strong>. I januari 1793 avrättades han, efter en omröstning med en rösts övervikt.",
+   "svar_kort": "<strong>1792</strong> avsattes kungen och Frankrike blev <strong>republik</strong>. <strong>1793</strong> avrättades han.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -487,7 +523,8 @@
   },
   {
    "fraga": "Vad var giljotinen?",
-   "svar": "En <strong>avrättningsmaskin</strong> som skulle göra avrättningar <strong>humanare</strong>.",
+   "svar": "En avrättningsmaskin med fallande blad. Den skulle göra avrättningarna <strong>humanare</strong> – med yxa missade bödeln ibland och fick hugga flera gånger. Ludvig XVI, Robespierre och Olympe de Gouges avrättades med giljotin.",
+   "svar_kort": "En <strong>avrättningsmaskin</strong> som skulle göra avrättningar <strong>humanare</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -500,7 +537,8 @@
   },
   {
    "fraga": "Vad var skräckväldet?",
-   "svar": "<strong>1793–94</strong>. Alla som <strong>misstänktes vara fiender avrättades</strong>, ca <strong>40 000</strong>.",
+   "svar": "Perioden <strong>september 1793 – juli 1794</strong>. Makten låg hos en mindre grupp ledare, som skulle rensa bort revolutionens fiender. <strong>Alla som misstänktes vara motståndare avrättades</strong>. Det tog slut när <strong>Robespierre</strong> arresterades och avrättades. Ungefär <strong>40 000</strong> människor dödades.",
+   "svar_kort": "<strong>1793–94</strong>. Alla som <strong>misstänktes vara fiender avrättades</strong>, ca <strong>40 000</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -513,7 +551,8 @@
   },
   {
    "fraga": "Hur kunde en revolution som talade om frihet och mänskliga rättigheter leda till skräckvälde?",
-   "svar": "<ul><li>Revolutionen var <strong>hotad av krig</strong></li><li>Ledarna tyckte att <strong>våld behövdes</strong></li><li>Det räckte att <strong>misstänkas</strong></li></ul>",
+   "svar": "Revolutionen var hotad. Europas monarkier ville stoppa idéerna, så det blev <strong>krig</strong> med Österrike och Storbritannien. Kungen hade samarbetat med fienden. Ledarna ville <strong>rensa bort fienderna</strong> och ansåg att våld behövdes för att skydda revolutionen. Men misstankar räckte för att avrättas, och mordet på Marat gav mer våld i stället för mindre. Boken skriver att konservativa såg massavrättningarna som ett tecken på att revolutionärernas taktik <strong>ledde samhället i fel riktning</strong>.",
+   "svar_kort": "<ul><li>Revolutionen var <strong>hotad av krig</strong></li><li>Ledarna tyckte att <strong>våld behövdes</strong></li><li>Det räckte att <strong>misstänkas</strong></li></ul>",
    "niva": "A",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -526,7 +565,8 @@
   },
   {
    "fraga": "Vem var Napoleon Bonaparte?",
-   "svar": "En general som <strong>tog makten 1799</strong>, blev <strong>kejsare 1804</strong> och förlorade vid <strong>Waterloo 1815</strong>.",
+   "svar": "En framgångsrik <strong>general</strong> i revolutionskrigen. I <strong>brumairekuppen 9–10 november 1799</strong> tog han makten, vilket blev slutet på revolutionen; han blev <strong>förste konsul</strong>. 1804 lät han <strong>kröna sig till kejsare</strong> i Notre-Dame och satte kronan på sitt eget huvud. Han besegrades slutligen vid <strong>Waterloo 1815</strong>.",
+   "svar_kort": "En general som <strong>tog makten 1799</strong>, blev <strong>kejsare 1804</strong> och förlorade vid <strong>Waterloo 1815</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -540,7 +580,8 @@
   },
   {
    "fraga": "Hur förde Napoleon vidare revolutionens idéer – och hur bröt han mot dem?",
-   "svar": "<strong>Bröt mot</strong>: tog makten med en kupp och blev <strong>kejsare</strong>. <strong>Förde vidare</strong>: ett <strong>stabilare styre</strong>.",
+   "svar": "<strong>Bröt mot</strong>: han tog makten genom en <strong>militärkupp</strong> och gjorde sig till <strong>kejsare</strong> – revolutionens folkliga styre ersattes av ett kejsardöme. Han satte själv kronan på sitt huvud för att visa att ingen stod över honom.\n<strong>Förde vidare</strong>: han gav landet ett <strong>stabilare styre</strong>, som många längtade efter, och hans krig spred Frankrikes inflytande i Europa. (Mer om Napoleons reformer står inte på de sidor som finns här.)",
+   "svar_kort": "<strong>Bröt mot</strong>: tog makten med en kupp och blev <strong>kejsare</strong>. <strong>Förde vidare</strong>: ett <strong>stabilare styre</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -554,7 +595,8 @@
   },
   {
    "fraga": "Sortera franska revolutionens orsaker enligt KEPS.",
-   "svar": "<ul><li><strong>K</strong>: upplysningens idéer</li><li><strong>E</strong>: staten saknade pengar</li><li><strong>P</strong>: tredje ståndet saknade makt</li><li><strong>S</strong>: orättvisa stånd</li></ul>",
+   "svar": "<ul><li><strong>K</strong>: upplysningens idéer – Voltaire och Rousseau om allas lika värde; USA som förebild</li><li><strong>E</strong>: staten saknade pengar efter krig, adel och präster betalade ingen skatt, dåliga skördar</li><li><strong>P</strong>: tredje ståndet hade begränsad politisk makt; en röst per stånd i generalständerna</li><li><strong>S</strong>: ståndssamhällets orättvisor; borgarna blev rikare och krävde inflytande</li></ul>",
+   "svar_kort": "<ul><li><strong>K</strong>: upplysningens idéer</li><li><strong>E</strong>: staten saknade pengar</li><li><strong>P</strong>: tredje ståndet saknade makt</li><li><strong>S</strong>: orättvisa stånd</li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -567,7 +609,8 @@
   },
   {
    "fraga": "Vilka var franska revolutionens kortsiktiga konsekvenser?",
-   "svar": "<strong>Privilegierna</strong> avskaffades, Frankrike blev <strong>republik</strong>, kungen avrättades, <strong>skräckväldet</strong>, <strong>Napoleon</strong>.",
+   "svar": "Adelns och prästernas <strong>privilegier avskaffades</strong> (4 aug 1789) och förklaringen om mänskliga rättigheter antogs. Kungen avsattes och Frankrike blev <strong>republik</strong> (1792), kungen och drottningen avrättades (1793), <strong>skräckväldet</strong> med ca 40 000 döda och <strong>revolutionskrigen</strong> i Europa. 1799 tog Napoleon makten.",
+   "svar_kort": "<strong>Privilegierna</strong> avskaffades, Frankrike blev <strong>republik</strong>, kungen avrättades, <strong>skräckväldet</strong>, <strong>Napoleon</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -580,7 +623,8 @@
   },
   {
    "fraga": "Vilka var franska revolutionens långsiktiga konsekvenser?",
-   "svar": "<ul><li><strong>Mänskliga rättigheter</strong></li><li><strong>Ideologierna</strong>, höger och vänster</li><li><strong>Sekularisering</strong></li><li><strong>Metersystemet</strong></li></ul>",
+   "svar": "<ul><li><strong>Mänskliga rättigheter</strong> – inspirerade FN:s deklaration 1948 och Sveriges grundlag 1974</li><li>Fler <strong>revolutioner</strong> under 1800-talet, t.ex. 1830 och 1848; <strong>medelklassen</strong> vann mest</li><li><strong>Sekularisering</strong> och religionsfrihet</li><li><strong>Ideologierna</strong> liberalism, konservatism och socialism; begreppen <strong>höger och vänster</strong></li><li><strong>Metersystemet</strong> (meter, liter, kilo)</li></ul>",
+   "svar_kort": "<ul><li><strong>Mänskliga rättigheter</strong></li><li><strong>Ideologierna</strong>, höger och vänster</li><li><strong>Sekularisering</strong></li><li><strong>Metersystemet</strong></li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -593,7 +637,8 @@
   },
   {
    "fraga": "Hur ledde franska revolutionen till att liberalismen och konservatismen växte fram?",
-   "svar": "<strong>Liberalismen</strong>: mer frihet. <strong>Konservatismen</strong>: en reaktion mot våldet – förändra <strong>långsamt</strong>.",
+   "svar": "<strong>Liberalismen</strong> (”liber” = fri) byggde på det som fransmännen kämpade för: <strong>frihet och mänskliga rättigheter</strong>. Staten ska inte bestämma vad man tänker; man ska få välja religion och uttrycka åsikter. <strong>Konservatismen</strong> (”conservare” = bevara) var en reaktion mot <strong>våldet och skräckväldet</strong>: förändringar ska ske <strong>långsamt och kontrollerat</strong>. Edmund Burke: ”När jag reformerar ska det ske för att bevara.”",
+   "svar_kort": "<strong>Liberalismen</strong>: mer frihet. <strong>Konservatismen</strong>: en reaktion mot våldet – förändra <strong>långsamt</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -606,7 +651,8 @@
   },
   {
    "fraga": "Vad är sekularisering?",
-   "svar": "När <strong>religionen får mindre betydelse</strong> i samhället.",
+   "svar": "<strong>Religionens minskade betydelse</strong> i samhället. Upplysningen och franska revolutionen ses som orsaker. Under revolutionen infördes <strong>religionsfrihet</strong>; katolska kyrkan angreps, präster dödades, kyrkor plundrades och kloster stängdes. Tron blev allt mer privat och kyrkans makt minskade.",
+   "svar_kort": "När <strong>religionen får mindre betydelse</strong> i samhället.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -619,7 +665,8 @@
   },
   {
    "fraga": "Förklara varför franska revolutionen anses vara en av de viktigaste händelserna i modern historia.",
-   "svar": "<ul><li>Visade att man kan <strong>göra uppror mot de styrande</strong></li><li>Spred <strong>demokrati och mänskliga rättigheter</strong></li><li>Gav oss <strong>ideologierna</strong> och höger–vänster</li></ul>",
+   "svar": "Den visade, precis som frihetskriget, att det gick att <strong>göra uppror mot de styrande</strong>. Kungars makt i Europa försvagades och <strong>demokratiska tankar slog rot</strong>. Förklaringen om <strong>mänskliga rättigheter</strong> utmanade och inspirerade, ända till FN:s deklaration 1948. Revolutionen gav upphov till <strong>ideologierna</strong> och begreppen höger och vänster, som präglar våra samhällen än i dag.",
+   "svar_kort": "<ul><li>Visade att man kan <strong>göra uppror mot de styrande</strong></li><li>Spred <strong>demokrati och mänskliga rättigheter</strong></li><li>Gav oss <strong>ideologierna</strong> och höger–vänster</li></ul>",
    "niva": "A",
    "tema": "Franska revolutionen",
    "samling": "Historia - Revolution (Bok)",
@@ -633,7 +680,8 @@
   },
   {
    "fraga": "Vilka likheter finns mellan den amerikanska och den franska revolutionen?",
-   "svar": "<ul><li><strong>Upplysningens idéer</strong></li><li><strong>Skatter</strong> var en orsak</li><li>Båda skrev om <strong>rättigheter</strong></li><li><strong>Kvinnor</strong> blev utan rättigheter</li></ul>",
+   "svar": "<ul><li>Båda påverkades av <strong>upplysningens tankar</strong> om frihet, tolerans och jämlikhet</li><li>Båda var revolter mot <strong>politiska och ekonomiska orättvisor</strong>, och <strong>skatter</strong> var en orsak</li><li>Båda gav en deklaration om <strong>rättigheter</strong> (1776 och 1789)</li><li>I båda blev <strong>kvinnor</strong> utan rättigheter, trots att de deltog</li><li>Båda förändrade <strong>styrelseskicket</strong> och synen på individen</li></ul>",
+   "svar_kort": "<ul><li><strong>Upplysningens idéer</strong></li><li><strong>Skatter</strong> var en orsak</li><li>Båda skrev om <strong>rättigheter</strong></li><li><strong>Kvinnor</strong> blev utan rättigheter</li></ul>",
    "niva": "C",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Historia - Revolution (Bok)",
@@ -646,7 +694,8 @@
   },
   {
    "fraga": "Vilka skillnader finns mellan den amerikanska och den franska revolutionen?",
-   "svar": "<ul><li>USA: <strong>krig mot ett annat land</strong></li><li>Frankrike: <strong>uppror mot sin egen kung</strong></li><li>Frankrike fick <strong>skräckvälde och kejsare</strong></li></ul>",
+   "svar": "<ul><li>Amerikanska var ett <strong>frihetskrig mot ett annat land</strong> (Storbritannien); franska var ett uppror <strong>inom landet</strong> mot kungen och de högre stånden</li><li>I Frankrike var <strong>ekonomisk ojämlikhet och klasskillnader</strong> en viktig drivkraft</li><li>USA fick en <strong>bestående</strong> författning; Frankrike fick <strong>skräckvälde</strong> och sedan <strong>kejsardöme</strong></li><li>I USA spelade <strong>religionen en viktig roll</strong>; i Frankrike angreps kyrkan</li></ul>",
+   "svar_kort": "<ul><li>USA: <strong>krig mot ett annat land</strong></li><li>Frankrike: <strong>uppror mot sin egen kung</strong></li><li>Frankrike fick <strong>skräckvälde och kejsare</strong></li></ul>",
    "niva": "C",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Historia - Revolution (Bok)",

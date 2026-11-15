@@ -27,6 +27,7 @@ Markeringar (röd/gul/grön), ignorerade kort och bästa förhör sparas i webbl
 
 - **Start** – sammanställning per ämne och tema med staplar, provområdets beskrivning, förhör på röda/gula kort per tema, ämne eller allt.
 - **Flashcards** – filter på nivå, samling, tema och färg; pluppar under kortet (en per kort, klicka för att hoppa); ignorera kort; inställningar (visa ignorerade, blanda, rensa färger, ta tillbaka ignorerade). Tangenter: mellanslag, ← →, 1 2 3, 0, I.
+- **Förenklade eller utförliga svar** – frågor kan ha ett kort svar (`svar_kort`) utöver det vanliga. Välj *Svar: Förenklade/Utförliga* i flashcards eller förhör (förenklade är förvalt); på varje kort kan man också visa den andra varianten. Valet syns bara i ämnen där minst en fråga har ett förenklat svar (just nu Historia). Fältet *Förenklat svar* finns i admin.
 - **Förhör** – välj ämne, teman, nivå och vilka kort; visa svaret och bedöm dig själv, bedömningen blir kortets färg.
 - **Tidslinje** (`tidslinje.html`, länk i menyn och under Historia) – revolutionernas tidslinje med fri panorering och zoom: fyra fält (upplysningen & idéer, amerikanska, franska, industriella), pratbubblor (stora = viktiga händelser, små = mindre), personer med porträtt, perioder som staplar och viktiga årtal markerade. Händelserna ligger i `ITEMS` i filen. Bilderna kommer från Wikimedia Commons (`web/img/tl/`, källor och licenser i `credits.json`, visas under *Bildkällor*).
 - **Dela** – resultatlänk (visar färger, röda/gula frågor och bläddringsbara kort för mottagaren) och flyttlänk med QR-kod för att fortsätta på en annan enhet (ersätt eller slå ihop).
@@ -69,7 +70,7 @@ Nivåerna E/C/A är satta efter frågans formulering och **inte granskade** – 
 
 | Tabell | Innehåll |
 |---|---|
-| `fraga` | fråga, svar, `niva` (E/C/A), tema, samling, källa, granskad, aktiv (visas i flashcards) |
+| `fraga` | fråga, svar, `svar_kort` (förenklat svar, valfritt), `niva` (E/C/A), tema, samling, källa, granskad, aktiv (visas i flashcards) |
 | `fraga_ci` | koppling fråga ↔ `centralt_innehall.nyckel`, plus texten vid kopplingen så att ändringar från Skolverket upptäcks |
 | `tema`, `samling` | per ämne |
 

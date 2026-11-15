@@ -77,6 +77,7 @@ section.view{padding-top:26px}
 .b-green[aria-pressed="true"]{background:var(--ok);color:var(--card)}
 .kbd{font-family:var(--mono);font-size:.74rem;opacity:.8}
 .clear-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+.svar-alt{display:block;width:fit-content;margin-top:18px;font-family:inherit;line-height:1.3;background:none;border:0;padding:4px 0;color:var(--accent);font-size:.88rem;font-weight:600;text-decoration:underline;cursor:pointer}
 .linkbtn{background:none;border:0;padding:4px 8px;color:var(--muted);text-decoration:underline;font-size:.9rem}
 .linkbtn:hover{color:var(--ink)}
 .linkbtn[disabled]{opacity:.4;cursor:default;text-decoration:none}
@@ -197,6 +198,7 @@ section.view{padding-top:26px}
   <details class="filt" id="filt" open><summary><span class="eyebrow">Filter</span> <span id="filt-sum" class="small"></span></summary>
   <div class="toolbar">
     <div class="row"><span class="lbl">Nivå</span><div class="chips" id="f-niva"></div></div>
+    <div class="row" id="f-svar-row" hidden><span class="lbl">Svar</span><div class="chips" id="f-svar"></div></div>
     <div class="row" id="f-samling-row"><span class="lbl">Samling</span><div class="chips" id="f-samling"></div></div>
     <div class="row" id="f-tema-row"><span class="lbl">Tema</span><div class="chips" id="f-tema"></div></div>
     <div class="row"><span class="lbl">Visa</span><div class="chips" id="f-status"></div></div>
@@ -246,7 +248,7 @@ section.view{padding-top:26px}
 <script src="common.js"></script>
 <script>
 const KEY = 'plugga-v1';
-const S = Object.assign({ amne: null, niva: ['E', 'C', 'A'], samling: 'alla', tema: 'alla', filter: 'alla', shuffle: false, showIgnored: true, status: {}, ignored: {}, name: '', best: {} }, load(KEY, {}));
+const S = Object.assign({ amne: null, niva: ['E', 'C', 'A'], samling: 'alla', tema: 'alla', filter: 'alla', shuffle: false, showIgnored: true, utforlig: false, status: {}, ignored: {}, name: '', best: {} }, load(KEY, {}));
 delete S.byAmne;
 if (!S.best || typeof S.best !== 'object') S.best = {};
 const save = () => store(KEY, S);
@@ -354,7 +356,7 @@ $('#reset-no').onclick = () => $('#reset-confirm').hidden = true;
 $('#reset-yes').onclick = () => { S.status = {}; S.best = {}; save(); $('#reset-confirm').hidden = true; renderStart(); buildDeck(); };
 
 /* ---------- flashcards ---------- */
-const fc = { list: [], i: 0, flipped: false, timer: null, confirm: null };
+const fc = { list: [], i: 0, flipped: false, alt: false, timer: null, confirm: null };
 const FILTERS = [['alla', 'Alla'], ['ejklar', 'Inte gröna'], ['red', 'Röda'], ['yellow', 'Gula'], ['green', 'Gröna'], ['none', 'Omarkerade'], ['ignored', 'Ignorerade']];
 const inScope = f => (S.samling === 'alla' || f.samling_id == S.samling) && (S.tema === 'alla' || (S.tema === 'ingen' ? !f.tema_id : f.tema_id == S.tema));
 const base = () => F().filter(f => S.niva.includes(f.niva) && inScope(f));
@@ -370,13 +372,19 @@ function buildDeck() {
   clearTimeout(fc.timer);
   if (!D()) { renderCard(); return; }
   const l = base().filter(f => matchFilter(f));
-  fc.list = S.shuffle ? shuffle(l) : l; fc.i = 0; fc.flipped = false;
+  fc.list = S.shuffle ? shuffle(l) : l; fc.i = 0; fc.flipped = false; fc.alt = false;
   renderFilters(); renderSettings(); renderCard();
 }
 function chips(el, items, cur, onPick) {
   el.innerHTML = items.map(([id, name, n, cls]) => `<button type="button" class="chip ${cls || ''}" data-id="${id}" aria-pressed="${Array.isArray(cur) ? cur.includes(id) : String(cur) === String(id)}">${name}${n !== undefined ? `<span class="n">${n}</span>` : ''}</button>`).join('');
   el.onclick = e => { const b = e.target.closest('[data-id]'); if (b) onPick(b.dataset.id); };
 }
+/* förenklade/utförliga svar: svar_kort finns bara på vissa frågor */
+const harKort = fs => fs.some(f => f.svar_kort);
+const svarOf = (f, alt = false) => ((S.utforlig !== alt) || !f.svar_kort) ? f.svar : f.svar_kort;
+const altBtn = (f, alt) => f.svar_kort ? `<button type="button" class="svar-alt" data-alt>${(S.utforlig !== alt) ? 'Visa förenklat svar' : 'Visa mer utförligt svar'}</button>` : '';
+const SVAR_CHIPS = [['kort', 'Förenklade'], ['lang', 'Utförliga']];
+function svarChips(el, after) { chips(el, SVAR_CHIPS, S.utforlig ? 'lang' : 'kort', id => { S.utforlig = id === 'lang'; save(); after(); }); }
 function renderFilters() {
   if (!D()) return;
   const A = D().amne, FR = F(), b = base();
@@ -387,6 +395,8 @@ function renderFilters() {
     if (!S.niva.length) S.niva = [id];
     save(); buildDeck();
   });
+  $('#f-svar-row').hidden = !harKort(FR);
+  svarChips($('#f-svar'), () => { fc.alt = false; renderFilters(); renderCard(); });
   const sam = A.samlingar.filter(s => s.antal);
   $('#f-samling-row').hidden = sam.length < 2;
   chips($('#f-samling'), [['alla', 'Alla'], ...sam.map(s => [s.id, esc(s.namn), FR.filter(f => f.samling_id === s.id && S.niva.includes(f.niva)).length])], S.samling, id => { S.samling = id; save(); buildDeck(); });
@@ -397,9 +407,9 @@ function renderFilters() {
   const nm = (arr, id) => (arr.find(x => String(x.id) === String(id)) || {}).namn;
   $('#filt-sum').textContent = [S.niva.length === 3 ? 'Alla nivåer' : 'Nivå ' + S.niva.join(', '),
     S.samling !== 'alla' && nm(A.samlingar, S.samling), S.tema !== 'alla' && (nm(A.teman, S.tema) || 'Övrigt'),
-    (FILTERS.find(f => f[0] === S.filter) || [])[1] + ' kort', S.shuffle && 'blandat'].filter(Boolean).join(' · ');
+    (FILTERS.find(f => f[0] === S.filter) || [])[1] + ' kort', S.shuffle && 'blandat', harKort(FR) && (S.utforlig ? 'utförliga svar' : 'förenklade svar')].filter(Boolean).join(' · ');
 }
-function goTo(i) { clearTimeout(fc.timer); if (i < 0 || i >= fc.list.length) return; fc.i = i; fc.flipped = false; renderCard(); }
+function goTo(i) { clearTimeout(fc.timer); if (i < 0 || i >= fc.list.length) return; fc.i = i; fc.flipped = false; fc.alt = false; renderCard(); }
 function renderCard() {
   const el = $('#deck');
   if (!D()) { el.innerHTML = '<div class="done">Det finns inga frågor än.</div>'; return; }
@@ -417,7 +427,7 @@ function renderCard() {
           <div class="q rich">${render(f.fraga)}</div>
           <div class="foot"><span>Tryck eller mellanslag för att vända</span></div></div>
         <div class="face back"><div class="face-head"><span>${lv(f.niva)} Svar</span>${badge(st, ign)}</div>
-          <div class="a rich">${render(f.svar) || '<span class="muted">Inget svar inlagt.</span>'}</div>
+          <div class="a rich">${render(svarOf(f, fc.alt)) || '<span class="muted">Inget svar inlagt.</span>'}${altBtn(f, fc.alt)}</div>
           <div class="foot">${f.kalla ? `<span>Källa: ${esc(f.kalla)}</span>` : ''}${f.ci.length ? `<span title="${esc(f.ci.map(c => c.text).join('\n'))}">Läroplanen: ${esc(f.ci[0].text.slice(0, 90))}${f.ci[0].text.length > 90 ? '…' : ''}${f.ci.length > 1 ? ` (+${f.ci.length - 1})` : ''}</span>` : ''}</div></div>
       </div>
     </div>
@@ -425,7 +435,7 @@ function renderCard() {
     <div class="clear-row"><button class="linkbtn" type="button" id="fc-clear" ${st && !ign ? '' : 'disabled'}>Rensa det här kortet <span class="kbd">0</span></button><button class="btn sm" type="button" id="fc-ignore" aria-pressed="${ign}">${ign ? 'Sluta ignorera' : 'Ignorera'} <span class="kbd">I</span></button></div>
     <div class="deck-nav"><button class="btn sm" type="button" id="fc-prev" ${fc.i === 0 ? 'disabled' : ''}>← Föregående</button><span class="pos">Kort ${fc.i + 1} av ${n}</span><button class="btn sm" type="button" id="fc-next" ${fc.i === n - 1 ? 'disabled' : ''}>Nästa →</button></div>
     <div class="dots" aria-label="Alla kort">${fc.list.map((x, i) => `<button type="button" class="${S.ignored[x.id] ? 'ignored' : (S.status[x.id] || '')}${i === fc.i ? ' cur' : ''}" data-i="${i}" aria-label="Kort ${i + 1}${S.ignored[x.id] ? ', ignoreras' : S.status[x.id] ? ', ' + STATUS[S.status[x.id]].namn : ''}"></button>`).join('')}</div>`;
-  const flip = $('#flip'); flip.onclick = () => { fc.flipped = !fc.flipped; flip.classList.toggle('on', fc.flipped); };
+  const flip = $('#flip'); flip.onclick = e => { if (e.target.closest('[data-alt]')) { fc.alt = !fc.alt; fc.flipped = true; renderCard(); return; } fc.flipped = !fc.flipped; flip.classList.toggle('on', fc.flipped); };
   $$('[data-st]', el).forEach(b => b.onclick = () => mark(b.dataset.st));
   $('#fc-clear').onclick = clearMark; $('#fc-ignore').onclick = toggleIgnore;
   $('#fc-prev').onclick = () => goTo(fc.i - 1); $('#fc-next').onclick = () => goTo(fc.i + 1);
@@ -484,6 +494,7 @@ function quizSetup() {
     ${tem.length ? `<div><p class="eyebrow" style="margin-bottom:8px">Teman <span class="muted" style="text-transform:none;letter-spacing:0">· välj ett eller flera</span></p><div class="chips" id="qz-teman"></div></div>` : ''}
     <div><p class="eyebrow" style="margin-bottom:8px">Nivå</p><div class="chips" id="qz-niva"></div></div>
     <div><p class="eyebrow" style="margin-bottom:8px">Vilka kort</p><div class="chips" id="qz-urval"></div></div>
+    ${harKort(F()) ? `<div><p class="eyebrow" style="margin-bottom:8px">Svar</p><div class="chips" id="qz-svar"></div></div>` : ''}
     <div class="row"><label for="qz-len" class="eyebrow">Antal frågor</label><select id="qz-len"><option value="10">10</option><option value="20">20</option><option value="999">Alla</option></select><span class="muted small" id="qz-count"></span></div>
     <div><button class="btn primary" id="qz-start" type="button">Starta förhöret</button></div>
   </div>
@@ -498,6 +509,7 @@ function quizSetup() {
       qz.niva = qz.niva.includes(id) ? qz.niva.filter(x => x !== id) : [...qz.niva, id]; if (!qz.niva.length) qz.niva = [id]; draw();
     });
     chips($('#qz-urval'), URVAL.map(([id, n]) => [id, n]), qz.urval, id => { qz.urval = id; draw(); });
+    if ($('#qz-svar')) svarChips($('#qz-svar'), () => { draw(); renderFilters(); renderCard(); });
     const n = quizPool().length;
     $('#qz-count').textContent = `${n} kort matchar`;
     $('#qz-start').disabled = !n;
@@ -524,10 +536,12 @@ function renderQ() {
 }
 function showAnswer() {
   const f = qz.list[qz.i], box = $('#qz-card'); if (!box || box.dataset.shown) return; box.dataset.shown = 1;
-  box.innerHTML = `<div class="feedback"><b class="h">Svar</b><div class="rich">${render(f.svar)}</div></div>
+  const ans = alt => `<b class="h">Svar</b><div class="rich">${render(svarOf(f, alt))}</div>${altBtn(f, alt)}`;
+  box.innerHTML = `<div class="feedback" id="qz-ans">${ans(false)}</div>
   <p class="muted" style="margin:14px 0 8px">Hur gick det? Det sparas som färg på kortet.</p>
   <div class="deck-actions">${['red', 'yellow', 'green'].map((s, k) => `<button type="button" class="b-${s}" data-g="${s}">${STATUS[s].namn}<small>${STATUS[s].hint} · <span class="kbd">${k + 1}</span></small></button>`).join('')}</div>`;
   $$('[data-g]', box).forEach(b => b.onclick = () => grade(b.dataset.g));
+  let alt = false; $('#qz-ans').onclick = e => { if (e.target.closest('[data-alt]')) { alt = !alt; $('#qz-ans').innerHTML = ans(alt); } };
 }
 function grade(st) {
   if (qz.answered) return; qz.answered = true;
@@ -544,7 +558,7 @@ function results() {
   const msg = p === 100 ? 'Alla gröna! De här korten sitter.' : p >= 80 ? 'Riktigt bra. Kolla de som inte blev gröna så sitter allt.' : p >= 50 ? 'Bra början. Kör de som inte blev gröna igen.' : 'Plugga med flashcards en stund och försök igen.';
   $('#quiz').innerHTML = `<div class="setup" style="text-align:center;justify-items:center"><p class="eyebrow">Resultat</p><p class="score">${s} / ${n}</p><p>${msg}</p>
   <div class="row" style="justify-content:center">${qz.missed.length ? '<button class="btn primary" id="qz-retry" type="button">Förhör de som inte blev gröna</button>' : ''}<a class="btn" href="#start">Till startsidan</a><button class="btn" id="qz-new" type="button">Nytt förhör</button></div></div>
-  ${qz.missed.length ? `<div class="missed"><h3>Inte gröna än</h3><ul>${qz.missed.map(m => `<li><b class="rich">${render(m.f.fraga)}</b><br><span class="muted">Du svarade: ${STATUS[m.st].namn}</span><div class="rich" style="margin-top:4px">${render(m.f.svar)}</div></li>`).join('')}</ul></div>` : ''}`;
+  ${qz.missed.length ? `<div class="missed"><h3>Inte gröna än</h3><ul>${qz.missed.map(m => `<li><b class="rich">${render(m.f.fraga)}</b><br><span class="muted">Du svarade: ${STATUS[m.st].namn}</span><div class="rich" style="margin-top:4px">${render(svarOf(m.f))}</div></li>`).join('')}</ul></div>` : ''}`;
   if (qz.missed.length) $('#qz-retry').onclick = () => startCardQuiz(qz.missed.map(m => m.f), 'Förhör på det som inte blev grönt', null);
   $('#qz-new').onclick = quizSetup;
 }
@@ -687,7 +701,7 @@ function renderResult() {
   const { name, st, ig, best, t } = SHARED, A = DATA[sv.amne].amne, FR = DATA[sv.amne].fragor, r = tallyOf(FR, st, ig), n = r.n;
   const whose = name ? (/[sxz]$/i.test(name) ? name : name + 's') + ' resultat' : 'Delat resultat', when = fmtWhen(t);
   const total = AMNEN.map(a => { const x = tallyOf(DATA[a.kod].fragor, st, ig); return `<div class="res-topic"><span><b>${esc(a.namn)}</b></span>${stackBar(x)}<span class="nums">${x.green}/${x.n} gröna</span></div>`; }).join('');
-  const list = s => FR.filter(f => !ig[f.id] && st[f.id] === s).map(f => `<details class="${s}"><summary><span class="rich">${render(f.fraga)}</span> <span class="muted" style="font-weight:400">· ${esc(temaOf(f))}</span></summary><div class="rich">${render(f.svar)}</div></details>`).join('');
+  const list = s => FR.filter(f => !ig[f.id] && st[f.id] === s).map(f => `<details class="${s}"><summary><span class="rich">${render(f.fraga)}</span> <span class="muted" style="font-weight:400">· ${esc(temaOf(f))}</span></summary><div class="rich">${render(svarOf(f))}</div></details>`).join('');
   $('#result').innerHTML = `<div class="res">
    <div class="res-banner"><span>Du tittar på ett delat resultat. Dina egna markeringar påverkas inte.</span><a class="btn sm" href="${location.pathname}">Öppna min egen Plugga</a></div>
    <div><p class="eyebrow">Plugga · flashcards</p><h1 style="font-size:clamp(2rem,5vw,2.8rem);margin-top:4px">${esc(whose)}</h1>${when ? `<p class="muted" style="margin-top:6px">Delat ${when}</p>` : ''}</div>
@@ -724,7 +738,7 @@ function renderSharedCard() {
   <div class="flip${sv.flipped ? ' on' : ''}${gi ? ' ign' : ''}" id="sv-flip" tabindex="0" role="button" aria-label="Vänd kortet">
     <div class="flip-in">
       <div class="face front"><div class="face-head"><span>${lv(f.niva)} Fråga</span>${badge(s, gi)}</div><div class="q rich">${render(f.fraga)}</div><div class="foot"><span>Tryck eller mellanslag för att se svaret</span></div></div>
-      <div class="face back"><div class="face-head"><span>${lv(f.niva)} Svar</span>${badge(s, gi)}</div><div class="a rich">${render(f.svar)}</div></div>
+      <div class="face back"><div class="face-head"><span>${lv(f.niva)} Svar</span>${badge(s, gi)}</div><div class="a rich">${render(svarOf(f))}</div></div>
     </div>
   </div>
   <div class="deck-nav"><button class="btn sm" type="button" id="sv-prev" ${sv.i === 0 ? 'disabled' : ''}>← Föregående</button><span class="pos">${sv.i + 1} / ${n}</span><button class="btn sm" type="button" id="sv-next" ${sv.i === n - 1 ? 'disabled' : ''}>Nästa →</button></div>
