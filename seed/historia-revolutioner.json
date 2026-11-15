@@ -18,7 +18,7 @@
  "fragor": [
   {
    "fraga": "Vilka tre delar har analysmodellen som används för att undersöka en revolution?",
-   "svar": "<strong>Orsaker</strong> (varför hände det?), <strong>händelser</strong> (vad hände?) och <strong>konsekvenser</strong> (vad ledde det till?).",
+   "svar": "<strong>Orsaker</strong>, <strong>händelser</strong> och <strong>konsekvenser</strong>.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -31,7 +31,7 @@
   },
   {
    "fraga": "Vad står KEPS för?",
-   "svar": "<strong>K</strong>ultur, <strong>E</strong>konomi, <strong>P</strong>olitik och <strong>S</strong>ocialt. Fyra perspektiv man kan sortera orsaker och konsekvenser i.",
+   "svar": "<strong>K</strong>ultur, <strong>E</strong>konomi, <strong>P</strong>olitik, <strong>S</strong>ocialt.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -44,7 +44,7 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>kultur</em> om? Ge exempel.",
-   "svar": "Idéer, tro, religion, konst, vetenskap och hur människor tänker. Ex: upplysningens idéer, att kyrkan förlorar makt.",
+   "svar": "<strong>Idéer, tro och vetenskap</strong>. Ex: upplysningens idéer.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -57,7 +57,7 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>ekonomi</em> om? Ge exempel.",
-   "svar": "Pengar, handel, skatter, arbete och produktion. Ex: höga skatter i Frankrike, fabriker och lönearbete under industrialiseringen.",
+   "svar": "<strong>Pengar, skatter och handel</strong>. Ex: höga skatter i Frankrike.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -70,7 +70,7 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>politik</em> om? Ge exempel.",
-   "svar": "Makt, styrelseskick, lagar och vem som bestämmer. Ex: kungen avsätts och Frankrike blir republik.",
+   "svar": "<strong>Makt och vem som bestämmer</strong>. Ex: kungen avsätts, Frankrike blir republik.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -83,7 +83,7 @@
   },
   {
    "fraga": "Vad handlar KEPS-perspektivet <em>socialt</em> om? Ge exempel.",
-   "svar": "Hur människor lever: familj, boende, klasser, levnadsvillkor. Ex: urbanisering, arbetarklassens trångboddhet, de tre stånden.",
+   "svar": "<strong>Hur människor lever</strong>, klasser och villkor. Ex: de tre stånden.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -96,7 +96,7 @@
   },
   {
    "fraga": "Vad är en revolution?",
-   "svar": "En <strong>snabb och genomgripande förändring</strong> av samhället, ofta när ett gammalt styre störtas. En revolution kan också vara en långsam men stor förändring, som den industriella revolutionen.",
+   "svar": "En <strong>snabb och stor förändring</strong> av samhället, ofta när makthavare störtas.",
    "niva": "E",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -109,7 +109,7 @@
   },
   {
    "fraga": "Vad är skillnaden mellan kortsiktiga och långsiktiga konsekvenser?",
-   "svar": "<strong>Kortsiktiga</strong> märks direkt eller inom några år (t.ex. kungen avrättas). <strong>Långsiktiga</strong> påverkar i hundratals år och ofta än idag (t.ex. mänskliga rättigheter, demokrati).",
+   "svar": "<strong>Kortsiktiga</strong> märks direkt (kungen avrättas). <strong>Långsiktiga</strong> märks än idag (mänskliga rättigheter).",
    "niva": "C",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -122,7 +122,7 @@
   },
   {
    "fraga": "Varför är det bra att använda både analysmodellen och KEPS när man förklarar en revolution?",
-   "svar": "Analysmodellen ger en tydlig ordning (orsak → händelse → konsekvens). KEPS gör att man ser att orsaker och konsekvenser finns inom flera områden samtidigt, så förklaringen blir mer allsidig.",
+   "svar": "Analysmodellen ger <strong>ordning</strong>. KEPS visar att orsakerna finns <strong>inom flera områden</strong>.",
    "niva": "C",
    "tema": "Analysmodell & KEPS",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -135,7 +135,7 @@
   },
   {
    "fraga": "Vilket land var de tretton kolonierna i Nordamerika styrda av före revolutionen?",
-   "svar": "<strong>Storbritannien</strong> (England).",
+   "svar": "<strong>Storbritannien</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -148,7 +148,7 @@
   },
   {
    "fraga": "Vad var upplysningen?",
-   "svar": "En idérörelse på 1700-talet som betonade <strong>förnuft och vetenskap</strong> istället för tradition och religion, och att alla människor har <strong>naturliga rättigheter</strong> som frihet och jämlikhet.",
+   "svar": "En idérörelse på 1700-talet: <strong>förnuft och vetenskap</strong> och att alla har <strong>naturliga rättigheter</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -161,7 +161,7 @@
   },
   {
    "fraga": "Vad var Boston Tea Party (1773)?",
-   "svar": "Kolonister i Boston, utklädda till indianer, <strong>kastade te i hamnen</strong> i protest mot den brittiska teskatten och teets monopol.",
+   "svar": "Kolonister <strong>kastade te i Bostons hamn</strong> i protest mot den brittiska teskatten.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -174,7 +174,7 @@
   },
   {
    "fraga": "Vad betyder parollen ”No taxation without representation”?",
-   "svar": "Ingen beskattning utan representation – kolonisterna ville <strong>inte betala skatt</strong> till det brittiska parlamentet eftersom de <strong>inte fick vara med och bestämma</strong> där.",
+   "svar": "Kolonisterna ville <strong>inte betala skatt</strong> när de <strong>inte fick vara med och bestämma</strong> i parlamentet.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -187,7 +187,7 @@
   },
   {
    "fraga": "Förklara de ekonomiska orsakerna till den amerikanska revolutionen.",
-   "svar": "Storbritannien hade skulder efter krig och <strong>höjde skatterna</strong> i kolonierna (t.ex. stämpelskatt, teskatt). Kolonierna fick också bara handla med Storbritannien. Kolonisterna ville ha <strong>ekonomisk frihet</strong> att handla och tjäna pengar själva.",
+   "svar": "Storbritannien <strong>höjde skatterna</strong> i kolonierna och styrde deras handel. Kolonisterna ville ha <strong>ekonomisk frihet</strong>.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -200,7 +200,7 @@
   },
   {
    "fraga": "Förklara de politiska orsakerna till den amerikanska revolutionen.",
-   "svar": "Kolonisterna styrdes från London utan att ha egna representanter i parlamentet. De ville ha <strong>politisk frihet</strong> och bestämma över sig själva.",
+   "svar": "De styrdes från London <strong>utan egna representanter</strong>. De ville <strong>bestämma själva</strong>.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -213,7 +213,7 @@
   },
   {
    "fraga": "Hur påverkade upplysningstankarna den amerikanska revolutionen?",
-   "svar": "Tänkare som <strong>John Locke</strong> menade att alla har rätt till liv, frihet och egendom och att folket får avsätta en styrande som inte respekterar det. Det gav kolonisterna argument för att göra uppror mot den brittiske kungen.",
+   "svar": "<strong>John Locke</strong>: alla har rätt till liv, frihet och egendom. Gav kolonisterna <strong>rätt att göra uppror</strong>.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -226,7 +226,7 @@
   },
   {
    "fraga": "Vad hände 4 juli 1776?",
-   "svar": "Kolonierna antog <strong>självständighetsförklaringen</strong> och förklarade sig fria från Storbritannien. (Därför är 4 juli USA:s nationaldag.)",
+   "svar": "<strong>Självständighetsförklaringen</strong> – kolonierna blev fria från Storbritannien.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -239,7 +239,7 @@
   },
   {
    "fraga": "Vem skrev självständighetsförklaringen och vad är dess mest kända tanke?",
-   "svar": "<strong>Thomas Jefferson</strong>. ”Alla människor är skapade lika” och har rätt till <strong>liv, frihet och strävan efter lycka</strong>.",
+   "svar": "<strong>Thomas Jefferson</strong>. ”<strong>Alla människor är skapade lika</strong>.”",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -252,7 +252,7 @@
   },
   {
    "fraga": "Hur slutade frihetskriget mellan kolonierna och Storbritannien?",
-   "svar": "Kolonierna vann med hjälp av bl.a. <strong>Frankrike</strong>. Storbritannien erkände USA:s självständighet <strong>1783</strong>.",
+   "svar": "Kolonierna <strong>vann</strong> med hjälp av <strong>Frankrike</strong>. Fred <strong>1783</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -265,7 +265,7 @@
   },
   {
    "fraga": "Vem blev USA:s första president?",
-   "svar": "<strong>George Washington</strong> (1789), som tidigare lett kolonisternas armé.",
+   "svar": "<strong>George Washington</strong>.",
    "niva": "E",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -278,7 +278,7 @@
   },
   {
    "fraga": "Varför kallas USA ”den första moderna republiken”?",
-   "svar": "USA fick ingen kung utan styrdes av <strong>valda representanter</strong> enligt en skriven <strong>konstitution</strong> (1787) med maktdelning mellan lagstiftande, verkställande och dömande makt.",
+   "svar": "Ingen kung – <strong>valda ledare</strong> och en <strong>skriven författning</strong> med maktdelning.",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -292,7 +292,7 @@
   },
   {
    "fraga": "Vilka konsekvenser fick den amerikanska revolutionen?",
-   "svar": "<ul><li><strong>Självständighetsförklaringen</strong> och USA blir en självständig stat</li><li><strong>Den första republiken</strong> med författning och maktdelning</li><li>Inspirerade <strong>franska revolutionen</strong> och senare frihetsrörelser</li><li>Frankrikes statsskuld växte av kriget</li></ul>",
+   "svar": "<ul><li><strong>USA</strong> blir ett eget land</li><li>Den <strong>första republiken</strong></li><li>Inspirerade <strong>franska revolutionen</strong></li></ul>",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -305,7 +305,7 @@
   },
   {
    "fraga": "Hur bidrog den amerikanska revolutionen till att den franska revolutionen bröt ut?",
-   "svar": "Dels visade den att <strong>upplysningens idéer gick att förverkliga</strong> – franska soldater kom hem och hade sett ett folk avsätta en kung. Dels hade Frankrike lånat stora summor för att stödja kolonierna, vilket förvärrade <strong>statens ekonomiska kris</strong> och ledde till höjda skatter.",
+   "svar": "<ul><li>Visade att <strong>upplysningens idéer gick att genomföra</strong></li><li>Kriget gjorde <strong>Frankrike skuldsatt</strong> → högre skatter</li></ul>",
    "niva": "A",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -318,7 +318,7 @@
   },
   {
    "fraga": "Gällde frihet och jämlikhet i det nya USA alla människor? Resonera.",
-   "svar": "Nej. <strong>Slaveriet fanns kvar</strong> (avskaffades först 1865), <strong>kvinnor</strong> fick inte rösta och <strong>ursprungsbefolkningen</strong> trängdes undan. Idéerna var stora, men gällde i praktiken främst vita män med egendom. Samtidigt blev idéerna ett argument för senare kamp för rättigheter.",
+   "svar": "<strong>Nej.</strong> Slaveriet fanns kvar, <strong>kvinnor</strong> fick inte rösta och <strong>ursprungsbefolkningen</strong> trängdes undan. Det gällde främst <strong>vita män</strong>.",
    "niva": "A",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -331,7 +331,7 @@
   },
   {
    "fraga": "Sortera den amerikanska revolutionens orsaker enligt KEPS.",
-   "svar": "<ul><li><strong>K</strong>: upplysningens idéer om frihet och naturliga rättigheter</li><li><strong>E</strong>: skatter och handelsregler från Storbritannien</li><li><strong>P</strong>: ingen representation i parlamentet, vilja till självstyre</li><li><strong>S</strong>: kolonisterna hade byggt ett eget samhälle och kände sig som amerikaner snarare än britter</li></ul>",
+   "svar": "<ul><li><strong>K</strong>: upplysningens idéer</li><li><strong>E</strong>: skatter och handelsregler</li><li><strong>P</strong>: ingen plats i parlamentet</li><li><strong>S</strong>: kände sig som amerikaner</li></ul>",
    "niva": "C",
    "tema": "Amerikanska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -344,7 +344,7 @@
   },
   {
    "fraga": "Vilka var de tre stånden i Frankrike före revolutionen?",
-   "svar": "<ol><li><strong>Prästerskapet</strong></li><li><strong>Adeln</strong></li><li><strong>Tredje ståndet</strong> – alla andra: borgare, hantverkare, arbetare och bönder (ca 97 % av folket)</li></ol>",
+   "svar": "<ol><li><strong>Prästerna</strong></li><li><strong>Adeln</strong></li><li><strong>Tredje ståndet</strong> – alla andra (97 %)</li></ol>",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -357,7 +357,7 @@
   },
   {
    "fraga": "Varför var ståndssamhället orättvist?",
-   "svar": "Präster och adel hade <strong>privilegier</strong> och betalade nästan ingen skatt, medan <strong>tredje ståndet bar skattebördan</strong>. Vid omröstningar hade varje stånd en röst, så de två första stånden kunde alltid rösta ner tredje ståndet.",
+   "svar": "Präster och adel <strong>slapp skatt</strong>. <strong>Tredje ståndet betalade</strong> men hade minst makt.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -370,7 +370,7 @@
   },
   {
    "fraga": "Vem var kung i Frankrike när revolutionen bröt ut?",
-   "svar": "<strong>Ludvig XVI</strong>, gift med <strong>Marie-Antoinette</strong>. Han var enväldig kung.",
+   "svar": "<strong>Ludvig XVI</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -383,7 +383,7 @@
   },
   {
    "fraga": "Förklara de ekonomiska orsakerna till franska revolutionen.",
-   "svar": "Staten var <strong>nästan bankrutt</strong> efter krig (bl.a. stödet till amerikanska revolutionen) och ett slösaktigt hov. Kungen ville <strong>höja skatterna</strong>. Samtidigt gav dåliga skördar <strong>hungersnöd</strong> och skyhöga brödpriser.",
+   "svar": "Staten var <strong>nästan bankrutt</strong> efter krig. <strong>Höga skatter</strong> och <strong>dyrt bröd</strong> efter dåliga skördar.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -396,7 +396,7 @@
   },
   {
    "fraga": "Vilka upplysningsfilosofer påverkade franska revolutionen och vad tyckte de?",
-   "svar": "<ul><li><strong>Montesquieu</strong>: maktdelning mellan lagstiftande, verkställande och dömande makt</li><li><strong>Rousseau</strong>: folket ska bestämma (folksuveränitet)</li><li><strong>Voltaire</strong>: yttrandefrihet och religionsfrihet, kritik mot kyrkan</li></ul>",
+   "svar": "<ul><li><strong>Montesquieu</strong>: maktdelning</li><li><strong>Rousseau</strong>: folket ska bestämma</li><li><strong>Voltaire</strong>: yttrande- och religionsfrihet</li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -409,7 +409,7 @@
   },
   {
    "fraga": "Vad var generalständerna och varför samlades de 1789?",
-   "svar": "En församling med representanter för <strong>de tre stånden</strong>. Kungen kallade in dem i maj 1789 för att få <strong>godkänt nya skatter</strong> eftersom staten saknade pengar.",
+   "svar": "Ett möte med <strong>de tre stånden</strong>. Kungen kallade in dem 1789 för att <strong>få pengar</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -422,7 +422,7 @@
   },
   {
    "fraga": "Vad var bollhuseden?",
-   "svar": "Juni 1789: tredje ståndet utropade sig till <strong>nationalförsamling</strong> och svor i ett bollhus i Versailles att <strong>inte skiljas förrän Frankrike fått en ny författning</strong>. Det var en revolt mot kungens makt.",
+   "svar": "Tredje ståndet svor att <strong>inte ge sig förrän Frankrike fått en ny författning</strong> (juni 1789).",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -435,7 +435,7 @@
   },
   {
    "fraga": "Vad hände 14 juli 1789?",
-   "svar": "Folket i Paris <strong>stormade Bastiljen</strong>, ett fängelse och vapenförråd som var en symbol för kungens makt. Dagen är Frankrikes nationaldag.",
+   "svar": "Folket <strong>stormade Bastiljen</strong> – revolutionen började.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -448,7 +448,7 @@
   },
   {
    "fraga": "Vad var ”Deklarationen om människans och medborgarens rättigheter” (1789)?",
-   "svar": "Ett dokument som slog fast att <strong>alla människor föds fria och lika i rättigheter</strong>, med t.ex. yttrandefrihet, religionsfrihet och rätt till egendom. Föregångare till dagens mänskliga rättigheter.",
+   "svar": "Den slog fast att <strong>alla föds fria och lika i rättigheter</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -461,7 +461,7 @@
   },
   {
    "fraga": "Vilka tre ord blev franska revolutionens motto?",
-   "svar": "<strong>Frihet, jämlikhet, broderskap</strong> (Liberté, égalité, fraternité).",
+   "svar": "<strong>Frihet, jämlikhet, broderskap</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -474,7 +474,7 @@
   },
   {
    "fraga": "Hur gick Frankrike från monarki till republik?",
-   "svar": "Först blev Frankrike en <strong>konstitutionell monarki</strong> (1791) där kungens makt begränsades. Kungen försökte fly och samarbetade med utländska fiender. <strong>1792 avskaffades monarkin</strong> och Frankrike blev republik. <strong>1793 avrättades Ludvig XVI</strong> med giljotin.",
+   "svar": "Kungens makt begränsades 1791. <strong>1792 blev Frankrike republik</strong>. <strong>1793 avrättades kungen</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -488,7 +488,7 @@
   },
   {
    "fraga": "Vad var giljotinen?",
-   "svar": "En avrättningsmaskin med ett fallande blad som halshögg. Den blev symbol för revolutionen och skräckväldet.",
+   "svar": "En <strong>avrättningsmaskin</strong> som halshögg. Symbol för skräckväldet.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -501,7 +501,7 @@
   },
   {
    "fraga": "Vad var skräckväldet?",
-   "svar": "1793–1794 då <strong>jakobinerna</strong> under <strong>Robespierre</strong> styrde. Alla som misstänktes vara revolutionens fiender kunde avrättas – tiotusentals dödades. Det slutade när Robespierre själv giljotinerades 1794.",
+   "svar": "<strong>1793–94</strong> när <strong>Robespierre</strong> styrde och tiotusentals <strong>misstänkta fiender avrättades</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -514,7 +514,7 @@
   },
   {
    "fraga": "Hur kunde en revolution som talade om frihet och mänskliga rättigheter leda till skräckvälde?",
-   "svar": "Revolutionen var hotad både <strong>utifrån</strong> (krig mot andra monarkier) och <strong>inifrån</strong> (uppror, hunger). Ledarna menade att friheten måste försvaras med våld, och misstänksamheten växte. Utan fungerande rättsstat och maktdelning kunde en liten grupp ta all makt – ett exempel på hur revolutioner kan ”äta sina egna barn”.",
+   "svar": "<ul><li>Revolutionen var <strong>hotad</strong> av krig och uppror</li><li>Ledarna tyckte att <strong>våld behövdes</strong> för att skydda den</li><li>Ingen <strong>maktdelning</strong> stoppade dem</li></ul>",
    "niva": "A",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -527,7 +527,7 @@
   },
   {
    "fraga": "Vem var Napoleon Bonaparte?",
-   "svar": "En framgångsrik general som tog makten i en statskupp <strong>1799</strong> och <strong>kröntes till kejsare 1804</strong>. Han erövrade stora delar av Europa men besegrades slutligen vid <strong>Waterloo 1815</strong>.",
+   "svar": "En general som <strong>tog makten 1799</strong>, blev <strong>kejsare 1804</strong> och förlorade vid <strong>Waterloo 1815</strong>.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -541,7 +541,7 @@
   },
   {
    "fraga": "Hur förde Napoleon vidare revolutionens idéer – och hur bröt han mot dem?",
-   "svar": "<strong>Förde vidare</strong>: <strong>Code Napoléon</strong> – lika lagar för alla, slut på adelns privilegier, spred idéerna i Europa genom erövringarna. <strong>Bröt mot</strong>: han styrde som en <strong>diktator/kejsare</strong>, begränsade yttrandefriheten och förde krig.",
+   "svar": "<strong>Förde vidare</strong>: lika lagar för alla. <strong>Bröt mot</strong>: styrde som <strong>diktator</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -555,7 +555,7 @@
   },
   {
    "fraga": "Sortera franska revolutionens orsaker enligt KEPS.",
-   "svar": "<ul><li><strong>K</strong>: upplysningsidéer, inspiration från amerikanska revolutionen</li><li><strong>E</strong>: statsskuld, höga skatter, dåliga skördar och dyrt bröd</li><li><strong>P</strong>: enväldig kung, tredje ståndet saknade makt</li><li><strong>S</strong>: de tre stånden – orättvisa privilegier, hungersnöd</li></ul>",
+   "svar": "<ul><li><strong>K</strong>: upplysningsidéer</li><li><strong>E</strong>: statsskuld, skatter, dyrt bröd</li><li><strong>P</strong>: enväldig kung</li><li><strong>S</strong>: orättvisa stånd</li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -568,7 +568,7 @@
   },
   {
    "fraga": "Vilka var franska revolutionens kortsiktiga konsekvenser?",
-   "svar": "Kungen avsattes och avrättades, Frankrike blev republik, <strong>skräckväldet</strong> med tusentals döda, krig mot andra europeiska länder och till sist <strong>Napoleons maktövertagande</strong>.",
+   "svar": "Kungen <strong>avrättades</strong>, Frankrike blev <strong>republik</strong>, <strong>skräckväldet</strong> och till sist <strong>Napoleon</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -581,7 +581,7 @@
   },
   {
    "fraga": "Vilka var franska revolutionens långsiktiga konsekvenser?",
-   "svar": "<ul><li><strong>Mänskliga rättigheter</strong> – idén att alla har lika värde och rättigheter</li><li><strong>Ståndssamhället</strong> och adelns privilegier försvinner</li><li>De politiska <strong>ideologierna liberalism och konservatism</strong> växer fram</li><li><strong>Sekularisering</strong> – kyrkan förlorar makt</li><li><strong>Nationalism</strong> och idén om folkets makt (demokrati)</li></ul>",
+   "svar": "<ul><li><strong>Mänskliga rättigheter</strong></li><li><strong>Ståndssamhället</strong> försvinner</li><li><strong>Ideologierna</strong> växer fram</li><li><strong>Demokrati</strong></li></ul>",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -594,7 +594,7 @@
   },
   {
    "fraga": "Hur ledde franska revolutionen till att liberalismen och konservatismen växte fram?",
-   "svar": "<strong>Liberalismen</strong> byggde vidare på revolutionens idéer om <strong>individens frihet</strong>, rättigheter och fri marknad. <strong>Konservatismen</strong> växte fram som en reaktion mot revolutionens våld – konservativa (t.ex. <strong>Edmund Burke</strong>) menade att samhället ska förändras <strong>långsamt</strong> och bygga på traditioner, religion och ordning.",
+   "svar": "<strong>Liberalismen</strong>: vill ha mer frihet. <strong>Konservatismen</strong>: en reaktion mot våldet – förändra <strong>långsamt</strong>.",
    "niva": "C",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -607,7 +607,7 @@
   },
   {
    "fraga": "Vad är sekularisering?",
-   "svar": "När <strong>religionen och kyrkan förlorar makt</strong> och inflytande i samhället. Under franska revolutionen konfiskerades kyrkans jord och prästerna fick lyda staten.",
+   "svar": "När <strong>religionen och kyrkan förlorar makt</strong> i samhället.",
    "niva": "E",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -620,7 +620,7 @@
   },
   {
    "fraga": "Förklara varför franska revolutionen anses vara en av de viktigaste händelserna i modern historia.",
-   "svar": "Den <strong>krossade idén att kungar styr av Guds nåde</strong> och att man föds in i ett stånd. Idéerna om <strong>folkets makt, jämlikhet och mänskliga rättigheter</strong> spreds över Europa (bl.a. via Napoleon) och ligger till grund för dagens demokratier och FN:s deklaration om de mänskliga rättigheterna. Den gav också upphov till de politiska ideologierna och höger–vänster-skalan (efter var man satt i nationalförsamlingen).",
+   "svar": "<ul><li>Slutet på att <strong>kungar styr av Guds nåde</strong></li><li>Idéer om <strong>mänskliga rättigheter och demokrati</strong> spreds</li><li>Gav oss <strong>ideologierna</strong> och höger–vänster</li></ul>",
    "niva": "A",
    "tema": "Franska revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -634,7 +634,7 @@
   },
   {
    "fraga": "Var och när började den industriella revolutionen?",
-   "svar": "I <strong>Storbritannien</strong> i slutet av <strong>1700-talet</strong>. Till Sverige kom industrialiseringen på allvar under <strong>andra halvan av 1800-talet</strong>.",
+   "svar": "I <strong>Storbritannien</strong> i slutet av <strong>1700-talet</strong>.",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -647,7 +647,7 @@
   },
   {
    "fraga": "Vad är industrialisering?",
-   "svar": "Övergången från att tillverka saker för hand till <strong>maskinell massproduktion i fabriker</strong>, och från ett <strong>bondesamhälle</strong> till ett <strong>industrisamhälle</strong>.",
+   "svar": "När man går från att göra saker för hand till <strong>maskiner i fabriker</strong>.",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -660,7 +660,7 @@
   },
   {
    "fraga": "Vilken uppfinning anses vara den viktigaste för industrialiseringen?",
-   "svar": "<strong>Ångmaskinen</strong> (förbättrad av <strong>James Watt</strong> på 1760–80-talet). Den kunde driva maskiner, pumpar, tåg och båtar med kraft från kol.",
+   "svar": "<strong>Ångmaskinen</strong> (James Watt).",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -673,7 +673,7 @@
   },
   {
    "fraga": "Inom vilken bransch började industrialiseringen?",
-   "svar": "<strong>Textilindustrin</strong> – spinnmaskiner och mekaniska vävstolar gjorde att tyg kunde tillverkas snabbt och billigt.",
+   "svar": "<strong>Textilindustrin</strong> (tyg).",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -686,7 +686,7 @@
   },
   {
    "fraga": "Hur bidrog förändringar i jordbruket till industrialiseringen?",
-   "svar": "<strong>Jordbruksrevolutionen</strong>: nya redskap, växelbruk och skiften (t.ex. enskiftet i Sverige) gav <strong>större skördar med färre arbetare</strong>. Mer mat → befolkningen växte, och överskottet av människor på landet <strong>flyttade till städerna</strong> och blev fabriksarbetare.",
+   "svar": "<strong>Större skördar med färre bönder</strong> → fler flyttade till städerna och <strong>blev fabriksarbetare</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -699,7 +699,7 @@
   },
   {
    "fraga": "Varför var en växande befolkning en orsak till industrialiseringen?",
-   "svar": "Fler människor gav <strong>fler arbetare</strong> till fabrikerna och <strong>fler köpare</strong> av varorna. Befolkningen växte tack vare bättre skördar, potatisen, vaccin (smittkoppor) och fred.",
+   "svar": "Gav <strong>fler arbetare</strong> och <strong>fler köpare</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -712,7 +712,7 @@
   },
   {
    "fraga": "Hur hängde kolonialism och globalisering ihop med industrialiseringen?",
-   "svar": "Kolonierna gav <strong>billiga råvaror</strong> (t.ex. bomull, odlad av slavar) och blev <strong>marknader</strong> där industriländerna sålde sina varor. Handel och slavhandel hade också gett <strong>kapital</strong> som kunde investeras i fabriker.",
+   "svar": "Kolonierna gav <strong>billiga råvaror</strong> (bomull) och var <strong>marknader</strong> för varorna.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -725,7 +725,7 @@
   },
   {
    "fraga": "Varför började industrialiseringen just i Storbritannien?",
-   "svar": "<ul><li>Mycket <strong>kol och järn</strong></li><li><strong>Kolonier</strong> med råvaror och marknader</li><li><strong>Kapital</strong> från handel</li><li>Förändrat jordbruk → arbetskraft</li><li>Stabilt styre och goda transporter (hamnar, kanaler)</li></ul>",
+   "svar": "<ul><li><strong>Kol och järn</strong></li><li><strong>Kolonier</strong></li><li><strong>Pengar</strong> från handel</li><li>Många <strong>arbetare</strong></li></ul>",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -738,7 +738,7 @@
   },
   {
    "fraga": "Vad är urbanisering?",
-   "svar": "Att allt fler människor <strong>flyttar från landsbygden in till städerna</strong> och städerna växer.",
+   "svar": "När människor <strong>flyttar från landet till städerna</strong>.",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -751,7 +751,7 @@
   },
   {
    "fraga": "Hur såg levnadsvillkoren ut för arbetarna i de tidiga industristäderna?",
-   "svar": "<strong>Långa arbetsdagar</strong> (12–16 timmar), låga löner, <strong>barnarbete</strong>, farliga maskiner. Trångbott i <strong>slumområden</strong> utan rent vatten och avlopp → sjukdomar som kolera. Luften var förorenad av kolrök.",
+   "svar": "<strong>Långa dagar</strong>, låga löner, <strong>barnarbete</strong>, trångt och smutsigt i <strong>slummen</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -764,7 +764,7 @@
   },
   {
    "fraga": "Vilken betydelse fick järnvägen?",
-   "svar": "Varor, råvaror och människor kunde <strong>transporteras snabbt, billigt och långt</strong>. Marknaderna växte, nya orter uppstod längs banorna och fler kunde flytta. I Sverige byggdes stambanorna från 1850-talet.",
+   "svar": "Varor och människor kunde <strong>transporteras snabbt och billigt</strong>.",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -777,7 +777,7 @@
   },
   {
    "fraga": "Vilka nya energikällor användes under industrialiseringen och vad blev följden?",
-   "svar": "Från muskel-, vind- och vattenkraft till <strong>fossila bränslen</strong>: först <strong>kol</strong>, senare <strong>olja</strong>. Det gav enorm energi till fabriker och transporter men också <strong>luftföroreningar</strong> och början på den <strong>klimatförändring</strong> vi har idag.",
+   "svar": "<strong>Kol</strong>, senare <strong>olja</strong>. Mycket energi – men <strong>föroreningar</strong> och klimatförändring.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -790,7 +790,7 @@
   },
   {
    "fraga": "Vilka nya samhällsklasser växte fram under industrialiseringen?",
-   "svar": "<strong>Arbetarklassen</strong> (fabriksarbetare som säljer sitt arbete för lön) och <strong>borgarklassen</strong>/kapitalisterna (de som äger fabrikerna).",
+   "svar": "<strong>Arbetarklassen</strong> och <strong>borgarklassen</strong> (fabriksägarna).",
    "niva": "E",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -804,7 +804,7 @@
   },
   {
    "fraga": "Varför växte socialismen fram under industrialiseringen?",
-   "svar": "Som en reaktion på arbetarnas <strong>dåliga villkor</strong> och de stora klassklyftorna. Socialister som <strong>Karl Marx</strong> menade att arbetarna utnyttjades och att produktionsmedlen (fabrikerna) borde ägas gemensamt. Ur detta kom <strong>fackföreningar</strong> och arbetarpartier (t.ex. Socialdemokraterna 1889).",
+   "svar": "För att arbetarna hade <strong>dåliga villkor</strong>. <strong>Karl Marx</strong> ville att fabrikerna skulle <strong>ägas gemensamt</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -818,7 +818,7 @@
   },
   {
    "fraga": "Varför emigrerade många svenskar under 1800-talet och vart?",
-   "svar": "Ca <strong>1,3 miljoner svenskar</strong> utvandrade, främst till <strong>USA</strong>. Orsaker: fattigdom, svält (missväxtåren 1867–69), brist på jord när befolkningen växte, och billigare resor med ångbåt och tåg. I USA lockade jord och jobb.",
+   "svar": "<strong>Fattigdom och svält</strong>. Ca 1,3 miljoner åkte till <strong>USA</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -832,7 +832,7 @@
   },
   {
    "fraga": "Hur förändrades kvinnors och barns situation under industrialiseringen?",
-   "svar": "Kvinnor och barn arbetade i fabrikerna för <strong>ännu lägre lön</strong> än män. Så småningom kom lagar mot barnarbete och <strong>skolplikt</strong> (folkskolan i Sverige 1842). Kvinnors lönearbete blev en grund för kvinnorörelsens krav på rättigheter.",
+   "svar": "De jobbade i fabrikerna för <strong>lägre lön</strong>. Senare kom <strong>skolplikt</strong> och förbud mot barnarbete.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -845,7 +845,7 @@
   },
   {
    "fraga": "Vilka var industrialiseringens kortsiktiga konsekvenser?",
-   "svar": "Snabb <strong>urbanisering</strong>, slum och sjukdomar, barnarbete och långa arbetsdagar, nya klasser, miljöförstöring i städerna, men också <strong>fler jobb och billigare varor</strong>.",
+   "svar": "<strong>Urbanisering</strong>, slum, barnarbete – men också <strong>fler jobb och billigare varor</strong>.",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -858,7 +858,7 @@
   },
   {
    "fraga": "Vilka var industrialiseringens långsiktiga konsekvenser?",
-   "svar": "<ul><li><strong>Högre levnadsstandard</strong> och längre liv för de flesta</li><li><strong>Arbetarrörelsen</strong>, fackföreningar, socialismen och så småningom <strong>demokrati och välfärdssamhälle</strong></li><li><strong>Globalisering</strong> och världshandel</li><li><strong>Fossilberoende</strong> och <strong>klimatförändringar</strong></li><li>Klyftor mellan industriländer och tidigare kolonier</li></ul>",
+   "svar": "<ul><li><strong>Bättre levnadsstandard</strong></li><li><strong>Arbetarrörelsen</strong> och demokrati</li><li><strong>Globalisering</strong></li><li><strong>Klimatförändringar</strong></li></ul>",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -872,7 +872,7 @@
   },
   {
    "fraga": "Förklara hur industrialiseringen har lagt grunden för det samhälle vi lever i idag.",
-   "svar": "Resonera gärna med KEPS:<ul><li><strong>E</strong>: massproduktion, lönearbete och världshandel – billiga varor och vår höga levnadsstandard, men också fossilberoendet bakom klimatkrisen</li><li><strong>S</strong>: de flesta bor i <strong>städer</strong>, arbetar för lön och har fritid; familjen förändrades och barn går i skolan istället för att arbeta</li><li><strong>P</strong>: arbetarrörelsen och kvinnorörelsen kämpade fram <strong>allmän rösträtt</strong>, fackliga rättigheter och <strong>välfärdssamhället</strong> (sjukvård, pension, skola)</li><li><strong>K</strong>: tro på vetenskap och teknisk utveckling, ideologier som socialism och liberalism präglar politiken än idag</li></ul>Avsluta med att knyta ihop: utan industrialiseringen inget modernt konsumtions-, välfärds- och demokratisamhälle.",
+   "svar": "<ul><li><strong>E</strong>: lönearbete, billiga varor</li><li><strong>S</strong>: vi bor i <strong>städer</strong></li><li><strong>P</strong>: rösträtt och <strong>välfärd</strong></li><li><strong>K</strong>: tro på teknik</li></ul>",
    "niva": "A",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -886,7 +886,7 @@
   },
   {
    "fraga": "Var industrialiseringen bra eller dålig för människorna? Resonera.",
-   "svar": "<strong>På kort sikt</strong> blev livet ofta svårare för arbetarna: slum, sjukdomar, barnarbete. <strong>På lång sikt</strong> ledde den till högre löner, bättre hälsa, kortare arbetstid och demokrati. Men den skapade också <strong>miljöproblem</strong> och klyftor mellan världsdelar. Svaret beror alltså på <strong>tidsperspektiv</strong> och på <strong>vem</strong> man frågar – fabriksägare, arbetare eller människor i kolonierna.",
+   "svar": "<strong>Kort sikt</strong>: sämre för arbetarna. <strong>Lång sikt</strong>: bättre liv – men <strong>miljöproblem</strong>. Det beror på <strong>vem</strong> man frågar.",
    "niva": "A",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -899,7 +899,7 @@
   },
   {
    "fraga": "Sortera industrialiseringens orsaker enligt KEPS.",
-   "svar": "<ul><li><strong>K</strong>: vetenskap, ny teknik och uppfinningar (ångmaskinen)</li><li><strong>E</strong>: kapital från handel, kolonialism och globalisering, råvaror som kol och bomull</li><li><strong>P</strong>: stabil stat, kolonimakt, frihandel</li><li><strong>S</strong>: växande befolkning, förändrat jordbruk som frigjorde arbetskraft</li></ul>",
+   "svar": "<ul><li><strong>K</strong>: uppfinningar</li><li><strong>E</strong>: pengar, kolonier, kol</li><li><strong>P</strong>: stabilt land</li><li><strong>S</strong>: fler människor</li></ul>",
    "niva": "C",
    "tema": "Industriella revolutionen",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -912,7 +912,7 @@
   },
   {
    "fraga": "Vilka likheter finns mellan den amerikanska och den franska revolutionen?",
-   "svar": "<ul><li>Båda inspirerades av <strong>upplysningens idéer</strong> om frihet, jämlikhet och folkets makt</li><li>Båda började delvis med <strong>skatter</strong> och missnöje med en kung</li><li>Båda ledde till en <strong>republik</strong> och ett dokument om rättigheter</li><li>Båda var <strong>snabba politiska revolutioner</strong> med våld/krig</li></ul>",
+   "svar": "<ul><li><strong>Upplysningens idéer</strong></li><li><strong>Skatter</strong> och missnöje med en kung</li><li>Blev <strong>republiker</strong></li></ul>",
    "niva": "C",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -925,7 +925,7 @@
   },
   {
    "fraga": "Vilka skillnader finns mellan den amerikanska och den franska revolutionen?",
-   "svar": "<ul><li>Amerikanska var ett <strong>frihetskrig mot en yttre makt</strong> (Storbritannien); franska var ett <strong>uppror inne i landet</strong> mot den egna kungen och ståndssamhället</li><li>I Frankrike var <strong>hunger och sociala orättvisor</strong> viktigare orsaker</li><li>Franska revolutionen blev <strong>våldsammare</strong> (skräckväldet) och mer <strong>instabil</strong> – slutade med en kejsare</li><li>USA:s republik blev <strong>bestående</strong></li></ul>",
+   "svar": "<ul><li>USA: <strong>krig mot ett annat land</strong></li><li>Frankrike: <strong>uppror mot sin egen kung</strong></li><li>Frankrike blev <strong>våldsammare</strong> och fick en kejsare</li></ul>",
    "niva": "C",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -938,7 +938,7 @@
   },
   {
    "fraga": "Hur skiljer sig industriella revolutionen från den amerikanska och den franska?",
-   "svar": "Amerikanska och franska var <strong>politiska</strong> revolutioner som skedde på <strong>några år</strong> och handlade om makt och styrelseskick. Den industriella var en <strong>ekonomisk, teknisk och social</strong> revolution som pågick <strong>under lång tid</strong> (100+ år) och ändrade hur människor arbetade och levde.",
+   "svar": "Amerikanska och franska var <strong>politiska</strong> och <strong>snabba</strong>. Industriella var <strong>ekonomisk</strong> och tog <strong>lång tid</strong>.",
    "niva": "C",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -952,7 +952,7 @@
   },
   {
    "fraga": "Vilka likheter finns mellan alla tre revolutionerna?",
-   "svar": "<ul><li>Alla förändrade samhället <strong>i grunden</strong> och påverkar oss än idag</li><li>Alla hängde ihop med <strong>nya idéer</strong> – upplysning, vetenskap, tro på förnuft och framsteg</li><li>Alla ledde till <strong>nya samhällsklasser och ideologier</strong> (borgarklassen stärks, liberalism, konservatism, socialism)</li><li>Alla bidrog till framväxten av <strong>demokrati</strong> och rättigheter, även om det tog lång tid</li></ul>",
+   "svar": "<ul><li>Förändrade samhället <strong>i grunden</strong></li><li><strong>Nya idéer</strong></li><li>Ledde mot <strong>demokrati</strong></li></ul>",
    "niva": "A",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -966,7 +966,7 @@
   },
   {
    "fraga": "Hur hänger de tre revolutionerna ihop med varandra?",
-   "svar": "Amerikanska revolutionen <strong>inspirerade</strong> och <strong>skuldsatte</strong> Frankrike → franska revolutionen. Franska revolutionen spred idéer om <strong>frihet och jämlikhet</strong> och gav upphov till ideologierna. Under industrialiseringen krävde de nya arbetar- och borgarklasserna att dessa idéer skulle gälla dem → <strong>socialism, arbetarrörelse och allmän rösträtt</strong>. Tillsammans kallas de ibland ”den dubbla revolutionen” (politisk + ekonomisk) som skapade det moderna samhället.",
+   "svar": "Amerikanska <strong>inspirerade</strong> franska. Franska spred <strong>frihet och jämlikhet</strong>. Arbetarna i industrin <strong>krävde samma rättigheter</strong>.",
    "niva": "A",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
@@ -980,7 +980,7 @@
   },
   {
    "fraga": "Vilken av de tre revolutionerna har påverkat ditt liv mest? Motivera.",
-   "svar": "Det finns inget rätt svar – det viktiga är att <strong>motivera med konsekvenser</strong>. Ex: <strong>Industriella</strong> – vi bor i städer, har lönearbete, teknik, välfärd och klimatproblem. <strong>Franska</strong> – mänskliga rättigheter, demokrati och ideologierna i dagens politik. Jämför gärna två och förklara varför den ena väger tyngre.",
+   "svar": "Inget rätt svar – <strong>motivera med konsekvenser</strong>. Ex: industriella → städer, teknik, välfärd.",
    "niva": "A",
    "tema": "Jämförelse av revolutionerna",
    "samling": "Prov: Revolutioner förändrar världen",
